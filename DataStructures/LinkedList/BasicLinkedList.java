@@ -1,6 +1,7 @@
 /*
  Linked List Basics : http://cslibrary.stanford.edu/103/ , http://www.cs.bu.edu/fac/snyder/cs112/CourseMaterials/LinkedListNotes.html
  Linked List Problems : http://cslibrary.stanford.edu/105/
+ https://www.youtube.com/watch?v=K7VIKlUdo20
 */
 
 class Node
