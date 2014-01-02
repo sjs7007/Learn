@@ -1,4 +1,4 @@
-//Insertion Sort
+//Insertion Sort,Cormen,pg16
 
 class InsertionSort
 {
