@@ -61,7 +61,7 @@ class Lec1InsertionSort
 
 **1.4.1 Theta notation**
 	
-	Drop lower order terms ignoring constants.
+Drop lower order terms ignoring constants.
 		
 
 
