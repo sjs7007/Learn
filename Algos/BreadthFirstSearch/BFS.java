@@ -19,12 +19,6 @@ class LList
 {
 	Node head,current;
 
-	/*LinkedList(Node x)
-	{
-		head=x;
-		current=head;
-	}*/
-
 	void add(Vertex x)
 	{
 		if(head==null)
@@ -34,7 +28,6 @@ class LList
 		}
 		else
 		{
-			//current.next=x;
 			Node newNode = new Node(x);
 			current.next = newNode;
 			current=newNode;
