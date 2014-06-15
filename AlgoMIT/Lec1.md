@@ -159,4 +159,7 @@ class MergeSort
 }
 ```
 
-2.3 Analysis : In handwritten notes.
+2.3 Analysis : In handwritten notes. 
+
+	Worst Case Time : theta(n lgn)
+
