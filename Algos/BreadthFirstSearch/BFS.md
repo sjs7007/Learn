@@ -52,7 +52,7 @@ while(Q is not empty)
 -----
 
 [Link](BFS.java)
-[Example USed](BFSExample.jpg)
+![Example Used](BFSExample.jpg)
 
 ```Java
 // Breadth First Search
@@ -252,4 +252,20 @@ class BFS
 
 ```
 
+Output:-
+```
+Adjacency Lists:-
+[ w ]
+[ t x ]
+[ w x u ]
+[ w t u y ]
+[ t x y ]
+[ x u ]
 
+Shortest Paths :-
+w-->s : 1
+t-->w-->s : 2
+x-->w-->s : 2
+u-->t-->w-->s : 3
+y-->x-->w-->s : 3
+```
