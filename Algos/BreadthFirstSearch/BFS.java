@@ -1,5 +1,9 @@
 // Breadth First Search
 
+//http://stackoverflow.com/questions/10213707/fifo-based-queue-implementations
+
+import java.util.*;
+
 class Node
 {
 	Vertex v;
@@ -11,7 +15,7 @@ class Node
 	}
 }
 
-class LinkedList
+class LList
 {
 	Node head,current;
 
@@ -53,8 +57,9 @@ class Vertex
 	char vertexName;
 	Vertex parent;
 	int distance;
+	String color;
 
-	LinkedList neighbors=new LinkedList();
+	LList neighbors=new LList();
 
 	Vertex(char x)
 	{
@@ -93,6 +98,50 @@ class Graph
 			vertexList[i].neighbors.display();
 		}
 	}
+
+	void BFS()
+	{
+		int infinity=10000; //infinity value
+		Queue<Vertex> Q =new LinkedList<Vertex>();
+
+		for(int i=1;i<vertexList.length;i++) 
+		{
+			vertexList[i].color="white";
+			vertexList[i].distance=infinity;
+			vertexList[i].parent=null; //optional, by default null
+		}
+
+		vertexList[0].color="gray";
+		vertexList[0].distance=0;
+		vertexList[0].parent=null; //optional
+
+		Q.add(vertexList[0]);
+		//System.out.println(Q.isEmpty());
+		while(!Q.isEmpty())
+		{
+			Vertex u = Q.poll(); //retrieve and remove first element
+
+			for(Node i=u.neighbors.head;i!=null;i=i.next)
+			{
+				if(i.v.color=="white")
+				{
+					i.v.color="gray";
+					i.v.distance=u.distance+1;
+					i.v.parent=u;
+					Q.add(i.v);
+				}
+			}
+			u.color="black";
+		}
+	}
+
+	void displayDistances()
+	{
+		for(int i=0;i<vertexList.length;i++)
+		{
+			System.out.println(vertexList[i].vertexName+" : "+vertexList[i].distance);
+		}
+	}
 }
 
 class BFS
@@ -102,5 +151,7 @@ class BFS
 		Graph G = new Graph();
 		G.inputData();
 		G.display();
+		G.BFS();
+		G.displayDistances();
 	}
 }
