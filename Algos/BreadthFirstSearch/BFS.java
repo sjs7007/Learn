@@ -74,13 +74,17 @@ class Graph
 
 	void inputData()
 	{
-		nVertices=4;
+		//nVertices=4;
+		nVertices=6;
 		vertexList=new Vertex[nVertices];
 
 		vertexList[0]=new Vertex('s');
 		vertexList[1]=new Vertex('w');
 		vertexList[2]=new Vertex('t');
 		vertexList[3]=new Vertex('x');
+		
+		vertexList[4]=new Vertex('u');
+		vertexList[5]=new Vertex('y');
 
 		vertexList[0].neighbors.add(vertexList[1]);
 		vertexList[1].neighbors.add(vertexList[2]);
@@ -89,10 +93,22 @@ class Graph
 		vertexList[2].neighbors.add(vertexList[3]);
 		vertexList[3].neighbors.add(vertexList[1]);
 		vertexList[3].neighbors.add(vertexList[2]);
+
+	//	tu,xu,xy,ut,ux,uy,yx,yu
+
+		vertexList[2].neighbors.add(vertexList[4]);
+		vertexList[3].neighbors.add(vertexList[4]);
+		vertexList[3].neighbors.add(vertexList[5]);
+		vertexList[4].neighbors.add(vertexList[2]);
+		vertexList[4].neighbors.add(vertexList[3]);
+		vertexList[4].neighbors.add(vertexList[5]);
+		vertexList[5].neighbors.add(vertexList[3]);
+		vertexList[5].neighbors.add(vertexList[4]);
 	}
 
 	void display()
 	{
+		System.out.println("Adjacency Lists:-");
 		for(int i=0;i<vertexList.length;i++)
 		{
 			vertexList[i].neighbors.display();
@@ -142,6 +158,26 @@ class Graph
 			System.out.println(vertexList[i].vertexName+" : "+vertexList[i].distance);
 		}
 	}
+
+	void displayShortestPath(Vertex V) //displays shortest path to parent
+	{
+		System.out.print(V.vertexName+"-->");
+		Vertex i;
+		for(i = V.parent; i.parent!=null;i=i.parent)
+		{
+			System.out.print(i.vertexName+"-->");
+		}
+		System.out.println(i.vertexName+" : "+V.distance);
+	}
+
+	void displayAllShortestPaths()
+	{
+		System.out.println("\nShortest Paths :-");
+		for(int i=1;i<vertexList.length;i++)
+		{
+			displayShortestPath(vertexList[i]);
+		}
+	}
 }
 
 class BFS
@@ -152,6 +188,7 @@ class BFS
 		G.inputData();
 		G.display();
 		G.BFS();
-		G.displayDistances();
+		//G.displayDistances();
+		G.displayAllShortestPaths();
 	}
 }
