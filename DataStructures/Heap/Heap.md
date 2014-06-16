@@ -112,6 +112,40 @@ class Heap
 		{
 			int temp=data[0];
 			data[0]=data[i];
+			data[i]=temp;
+			heapSize--;
+			MaxHeapify(0);
+		//	System.out.println(heapSize);
+		}
+	}
+}
+
+class HeapCode
+{
+	public static void main(String args[])
+	{
+		int data[]={16,4,10,14,7,9,3,2,8,1};
+		Heap H = new Heap(data); 
+		//H.MaxHeapify(1);
+
+	/*	H.BuildMaxHeap();
+		System.out.print("After bulding max heap : ");
+		for(int i=0;i<data.length;i++)
+		{
+			System.out.print(data[i]+" ");
+		}
+		System.out.println();
+	*/
+
+		H.HeapSort();
+		System.out.print("After heap sort : ");
+		for(int i=0;i<data.length;i++)
+		{
+			System.out.print(data[i]+" ");
+		}
+		System.out.println();
+	}
+}
 ```
 
 
