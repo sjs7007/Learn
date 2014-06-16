@@ -27,7 +27,8 @@
 
 + largest : index of largest value among left,right and parent.
 
-Max-Heapify(A,i)
+Max-Heapify(A,i)   
+
 ```C
 l=left(i)=2i // **NOTE**:For array starting from 0 index left=2i+1,right=2i+2 
 r=right(i)=2i+1
