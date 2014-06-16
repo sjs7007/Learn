@@ -1,0 +1,15 @@
+Adjacency Lists:-
+u : [ v x ]
+x : [ v ]
+v : [ y ]
+y : [ x ]
+w : [ y z ]
+z : [ z ]
+
+Times :-
+u : 1,8
+x : 4,5
+v : 2,7
+y : 3,6
+w : 9,12
+z : 10,11

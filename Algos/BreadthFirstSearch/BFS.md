@@ -55,10 +55,6 @@ while(Q is not empty)
 ![Example Used](BFSExample.jpg)
 
 ```Java
-// Breadth First Search
-
-//http://stackoverflow.com/questions/10213707/fifo-based-queue-implementations
-
 import java.util.*;
 
 class Node
@@ -76,12 +72,6 @@ class LList
 {
 	Node head,current;
 
-	/*LinkedList(Node x)
-	{
-		head=x;
-		current=head;
-	}*/
-
 	void add(Vertex x)
 	{
 		if(head==null)
@@ -91,7 +81,6 @@ class LList
 		}
 		else
 		{
-			//current.next=x;
 			Node newNode = new Node(x);
 			current.next = newNode;
 			current=newNode;
