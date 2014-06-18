@@ -13,7 +13,8 @@
 + DFSin : Time when DFS procedure enters vertex.
 + DFSout : Time when DFS procedure leaves vertex.
 
-DFS(G)
+DFS(G)   
+
 ```
 for each vertex u in G
 	u.color=white
@@ -25,7 +26,8 @@ for each vertex u in G
 		DFSVisit(G,u)
 ```
 
-DFSVisit(G)
+DFSVisit(G)   
+
 ```
 time = time+1
 u.DFSin = time
@@ -205,9 +207,11 @@ class DFS
 
 ```
 
-Output:-
+Output:-   
+
 ```  
-Adjacency Lists:-
+Adjacency Lists:-   
+
 u : [ v x ]
 x : [ v ]
 v : [ y ]
@@ -215,7 +219,8 @@ y : [ x ]
 w : [ y z ]
 z : [ z ]
 
-Times :-
+Times :-   
+
 u : 1,8
 x : 4,5
 v : 2,7

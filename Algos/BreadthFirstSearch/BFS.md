@@ -241,9 +241,11 @@ class BFS
 
 ```
 
-Output:-
+Output:-   
+
 ```
-Adjacency Lists:-
+Adjacency Lists:-   
+
 [ w ]
 [ t x ]
 [ w x u ]
@@ -251,7 +253,8 @@ Adjacency Lists:-
 [ t x y ]
 [ x u ]
 
-Shortest Paths :-
+Shortest Paths :-   
+
 w-->s : 1
 t-->w-->s : 2
 x-->w-->s : 2

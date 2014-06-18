@@ -43,7 +43,7 @@ if(largest!=i)
 	Max-Heapify(A,largest)
 ```
 
-### 3.2 Build-Max-Heap(A)
+### 3.2 Build-Max-Heap(A)  
 
 + All the elements in the subarray A(floor(n/2)+1...n) are all leves of the tree and hence each is a 1-element heap to begin with.
 
@@ -56,6 +56,19 @@ A.heap-size=A.length
 for i = floor(A.length/2) down-to 1
 	Max-Heapify(A,i)
 ```
+
+### 3.3 Extract-Max(A)   
+
+```Java
+if(A.heap-size<1)
+	error "Heap Underflow."
+max=A[1] //A[0] for 0 based indexes
+A[1]=A[A.heap-size] //A.heap-size-1 for 0 based indexes
+A.heap-size--;
+Max-Heapify(A,1) //(A,0)
+return max
+```
+
 
 4.Java Code
 ----
