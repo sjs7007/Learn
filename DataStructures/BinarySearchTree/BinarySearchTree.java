@@ -135,73 +135,6 @@ class BST
 			return y;
 		}
 	}
-
-	void visualizeTree() //Seems to work
-	{
-		Queue<Node> Q = new LinkedList<Node>();
-		Q.add(root);
-		root.spaceCount=7;
-		int count=1; //to keep track of new line
-		while(!Q.isEmpty())
-		{
-			Node u = Q.poll(); //dequeue
-
-			for(int i=0;i<u.spaceCount;i++)
-			{
-				System.out.print("\t");
-			}
-
-			System.out.print(u.key+" ");
-			count--;
-			if(count==0)
-			{
-				System.out.println();
-			}
-			if(u.left!=null)
-			{
-				count++;
-				Q.add(u.left);
-				if(u.spaceCount==2)
-				{
-					u.spaceCount=u.p.spaceCount;
-					if(u==u.p.left)
-					{
-						u.spaceCount--;
-					}
-					else
-					{
-						u.spaceCount++;
-					}
-				}
-				u.left.spaceCount=u.spaceCount-1;
-			}
-			if(u.right!=null)
-			{
-				count++;
-				Q.add(u.right);
-				if(u.spaceCount==2)
-				{
-					u.spaceCount=u.p.spaceCount;
-					if(u==u.p.left)
-					{
-						u.spaceCount--;
-					}
-					else
-					{
-						u.spaceCount++;
-					}
-				}
-				u.right.spaceCount=u.spaceCount+1;
-				if(u.left!=null)
-				{
-					u.right.spaceCount = 2;
-				}
-			}
-			
-		}
-	}
-
-
 }
 
 class BinarySearchTree
@@ -235,6 +168,5 @@ class BinarySearchTree
 		System.out.println("Min. Value : "+B.iterativeMin(B.root).key);
 		System.out.println("Successor of "+k+" : "+B.successor(B.recSearch(B.root,k)).key);
 		System.out.println("Predecessor of "+k+" : "+B.predecessor(B.recSearch(B.root,k)).key);
-		B.visualizeTree();
 	}
 }
