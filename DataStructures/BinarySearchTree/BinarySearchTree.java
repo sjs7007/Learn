@@ -88,6 +88,15 @@ class BST
 		return x;
 	}
 
+	Node iterativeMax(Node x)
+	{
+		while(x.right!=null)
+		{
+			x=x.right;
+		}
+		return x;
+	}
+
 	Node successor(Node x)
 	{
 		if(x.right!=null)
@@ -105,6 +114,25 @@ class BST
 			return y;
 		}
 	}
+
+	Node predecessor(Node x)
+	{
+		if(x.left!=null)
+		{
+			return iterativeMax(x.left);
+		}
+		else
+		{
+			Node y=x.p;
+			while(y!=null && x==y.left)
+			{
+				x=y;
+				y=y.p;
+			}
+			return y;
+		}
+	}
+
 
 }
 
@@ -125,7 +153,7 @@ class BinarySearchTree
 		B.inorderTraversal(B.root);
 		System.out.println();
 
-		int k=3;
+		int k=13;
 		Node find = B.recSearch(B.root,k);
 		if(find==null)
 		{
@@ -138,5 +166,6 @@ class BinarySearchTree
 
 		System.out.println("Min. Value : "+B.iterativeMin(B.root).key);
 		System.out.println("Successor of "+k+" : "+B.successor(B.recSearch(B.root,k)).key);
+		System.out.println("Predecessor of "+k+" : "+B.predecessor(B.recSearch(B.root,k)).key);
 	}
 }
