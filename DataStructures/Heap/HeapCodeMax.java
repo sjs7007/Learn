@@ -71,7 +71,7 @@ class Heap
 	}
 }
 
-class HeapCode
+class HeapCodeMax
 {
 	public static void main(String args[])
 	{
