@@ -17,14 +17,13 @@ class BST
 
 	void insert(int z)
 	{
-		Node newNode = new Node(z);
 		Node y = null;
 		Node x = root;
 
 		while(x!=null)
 		{
 			y = x;
-			if(newNode.key<x.key)
+			if(z<x.key)
 			{
 				x=x.left;
 			}
@@ -33,6 +32,9 @@ class BST
 				x=x.right;
 			}
 		}
+		
+		Node newNode = new Node(z);
+		newNode.p=y;
 
 		if(y==null) //empty Tree
 		{
@@ -77,22 +79,33 @@ class BST
 		}
 	}
 
-	void iterativeMin()
+	Node iterativeMin(Node x)
 	{
-		Node x = root;
-		if(x==null)
+		while(x.left!=null)
 		{
-			System.out.println("No min. value,empty tree.");
+			x=x.left;
+		}
+		return x;
+	}
+
+	Node successor(Node x)
+	{
+		if(x.right!=null)
+		{
+			return iterativeMin(x.right);
 		}
 		else
 		{
-			while(x.left!=null)
+			Node y=x.p;
+			while(y!=null && x==y.right)
 			{
-				x=x.left;
+				x=y;
+				y=y.p;
 			}
-			System.out.println("Min. value : "+x.key);
+			return y;
 		}
 	}
+
 }
 
 class BinarySearchTree
@@ -112,7 +125,7 @@ class BinarySearchTree
 		B.inorderTraversal(B.root);
 		System.out.println();
 
-		int k=14;
+		int k=3;
 		Node find = B.recSearch(B.root,k);
 		if(find==null)
 		{
@@ -120,9 +133,10 @@ class BinarySearchTree
 		}
 		else
 		{
-			System.out.println("Node found.");
+			System.out.println("Node with key "+k+" found.");
 		}
 
-		B.iterativeMin();
+		System.out.println("Min. Value : "+B.iterativeMin(B.root).key);
+		System.out.println("Successor of "+k+" : "+B.successor(B.recSearch(B.root,k)).key);
 	}
 }
