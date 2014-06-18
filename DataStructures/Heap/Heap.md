@@ -49,7 +49,8 @@ if(largest!=i)
 
 + Thus the Max-Heapify procedure can be used in a bottom-up manner to convert heap to max-heap.
 
-Build-Max-Heap(A)
+Build-Max-Heap(A)   
+
 ```
 A.heap-size=A.length
 for i = floor(A.length/2) down-to 1
@@ -60,7 +61,7 @@ for i = floor(A.length/2) down-to 1
 ----
 [Java Code Link](HeapCode.java)
 
-**Code for max heapify,build max heap,heap sort**
+**Code for max heapify,build max heap,heap sort**  
 
 ```Java
 class Heap
