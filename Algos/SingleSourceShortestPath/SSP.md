@@ -19,6 +19,14 @@
 
 	+ Cormen, pg 658
 
++ Lecture 3
+
+	+ [Bellman Ford Algo]()
+
+	+ [Slides]()
+
+	+ Cormen, pg 651
+
 2.Common Psuedo Codes
 -----
 
@@ -42,11 +50,16 @@ if(v.d > u.d + w(u,v))
 3.Dijkstra 
 -----
 
-### 3.1 Example   
+### 3.1 Description
+
++ Solves single source shortest path on a weighted directed graph G.
++ Here all edge weights are >=0.
+
+### 3.2 Example   
 
 ![Example](Dijkstra.png)
 
-### 3.2 Psuedo Code   
+### 3.3 Psuedo Code   
 
 + Q is a min. priority arranged by key values as vertex distances from start node.
 
@@ -61,7 +74,7 @@ while(Q is not empty)
 		Relax(u,v,w)
 ```
 
-### 3.3 Java Code
+### 3.4 Java Code
 
 [Java Code Link]()
 
@@ -331,6 +344,39 @@ z : 7
 
 ```
 
+4.Bellman Ford Algorithm
+
+### 4.1 Description
+
++ Solves single source shortest path problem in general case in which edge weights maybe negative.
++ Returns a boolean value indicating whether or not there is a negative-weight cycle that is reachable from source.
++ If there is such a cycle, no solution exists.
++ Runs in O(VE) time.
+
+### 4.2 Example
+
+![BellmanFord](BellmanFord.png)
+
+### 4.3 Psuedo Code
+
+Bellman-Ford
+
+```
+Initialize-Single-Source(G,s)
+for i=0 to nVertices-1
+	for each edge (u,v) belonging to graph G
+		Relax(u,v,w)
+for each ege (u,v) belonging to graph G
+	if v.d > u.d + w(u,v)
+		return FALSE
+return TRUE
+```
+### 4.4 Java Code
+
+[Java Code](BellmanFord.java)
+
+```Java
+```
 
 
 
