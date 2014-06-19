@@ -1,4 +1,4 @@
-// Build Min Heap, Heapify, Heap Sort, Extract Min - Min Priority Queue
+// Build Min Heap, Heapify, Heap Sort
 
 class Heap
 {
@@ -56,19 +56,6 @@ class Heap
 		//	System.out.println(heapSize);
 		}
 	}
-
-	int ExtractMin()
-	{
-		if(heapSize<0)
-		{
-			return -1; //heap underflow
-		}
-		int min=data[0];
-		data[0]=data[heapSize-1];
-		heapSize--;
-		MinHeapify(0);
-		return min;
-	}
 }
 
 class HeapCodeMin
@@ -86,10 +73,6 @@ class HeapCodeMin
 			System.out.print(data[i]+" ");
 		}
 		System.out.println();
-
-		/*System.out.println("Min Value : "+H.ExtractMin());
-		System.out.println("Min Value : "+H.ExtractMin());
-		System.out.println("Min Value : "+H.ExtractMin());*/
 	
 		H.HeapSort();
 		System.out.print("After heap sort in decreasing order : ");

@@ -44,7 +44,8 @@ u.DFSout=time
 3.Java Code
 --------
 
-[Link](DFS.java)
+[Link](https://github.com/sjs7007/Learn/blob/master/Algos/DepthFirstSearch/DFS.java)   
+   
 ![Example Used](DFSExample.jpg)
 
 ```Java

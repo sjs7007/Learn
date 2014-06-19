@@ -51,7 +51,8 @@ while(Q is not empty)
 3.Java Code
 -----
 
-[Link](BFS.java)
+[Link](https://github.com/sjs7007/Learn/blob/master/Algos/BreadthFirstSearch/BFS.java)   
+
 ![Example Used](BFSExample.jpg)
 
 ```Java

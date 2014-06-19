@@ -1,4 +1,4 @@
-// Build Max Heap, Heapify, Heap Sort, Extract Max - Max Priority Queue
+// Build Max Heap, Heapify, Heap Sort
 
 class Heap
 {
@@ -56,19 +56,6 @@ class Heap
 		//	System.out.println(heapSize);
 		}
 	}
-
-	int ExtractMax()
-	{
-		if(heapSize<0)
-		{
-			return -1; //heap underflow
-		}
-		int max=data[0];
-		data[0]=data[heapSize-1];
-		heapSize--;
-		MaxHeapify(0);
-		return max;
-	}
 }
 
 class HeapCodeMax
@@ -86,18 +73,14 @@ class HeapCodeMax
 			System.out.print(data[i]+" ");
 		}
 		System.out.println();
-
-		System.out.println("Max Value : "+H.ExtractMax());
-		System.out.println("Max Value : "+H.ExtractMax());
-		System.out.println("Max Value : "+H.ExtractMax());
 	
-		/*H.HeapSort();
+		H.HeapSort();
 		System.out.print("After heap sort : ");
 		for(int i=0;i<data.length;i++)
 		{
 			System.out.print(data[i]+" ");
 		}
-		System.out.println();*/
+		System.out.println();
 
 		
 	}

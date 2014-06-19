@@ -10,7 +10,7 @@
 --------
 ![Heap](Heap1.png)
 
-3.Psuedo Codes
+3.Psuedo Codes for Max-Heap(Heap-Sort)
 ------
 
 ### 3.1 Max-Heapify(A,i)
@@ -49,31 +49,28 @@ if(largest!=i)
 
 + Thus the Max-Heapify procedure can be used in a bottom-up manner to convert heap to max-heap.
 
-Build-Max-Heap(A)   
+Build-Max-Heap(A) for 0 based index  
 
 ```
 A.heap-size=A.length
-for i = floor(A.length/2) down-to 1
+for i = floor(A.length/2) down-to 0
 	Max-Heapify(A,i)
 ```
 
-### 3.3 Extract-Max(A)   
+### 3.3 Heap-Sort(A) for 0 based index
 
-```Java
-if(A.heap-size<1)
-	error "Heap Underflow."
-max=A[1] //A[0] for 0 based indexes
-A[1]=A[A.heap-size] //A.heap-size-1 for 0 based indexes
-A.heap-size--;
-Max-Heapify(A,1) //(A,0)
-return max
+```
+for i = A.length-1 to 1
+	A[0]<-->A[i]
+	A.heap-size=A.heap-size-1
+	Max-Heapify(A,0)
 ```
 
 
 4.Java Code
 ----
-[Max Heap](HeapCodeMax.java)
-[Min Heap](HeapCodeMin.java)
+[Max Heap](https://github.com/sjs7007/Learn/blob/master/DataStructures/Heap/HeapCodeMax.java)
+[Min Heap](https://github.com/sjs7007/Learn/blob/master/DataStructures/Heap/HeapCodeMin.java)
 
 ```Java
 // Build Max Heap, Heapify, Heap Sort, Extract Max - Max Priority Queue
@@ -134,19 +131,6 @@ class Heap
 		//	System.out.println(heapSize);
 		}
 	}
-
-	int ExtractMax()
-	{
-		if(heapSize<0)
-		{
-			return -1; //heap underflow
-		}
-		int max=data[0];
-		data[0]=data[heapSize-1];
-		heapSize--;
-		MaxHeapify(0);
-		return max;
-	}
 }
 
 class HeapCodeMax
@@ -164,18 +148,14 @@ class HeapCodeMax
 			System.out.print(data[i]+" ");
 		}
 		System.out.println();
-
-		System.out.println("Max Value : "+H.ExtractMax());
-		System.out.println("Max Value : "+H.ExtractMax());
-		System.out.println("Max Value : "+H.ExtractMax());
 	
-		/*H.HeapSort();
+		H.HeapSort();
 		System.out.print("After heap sort : ");
 		for(int i=0;i<data.length;i++)
 		{
 			System.out.print(data[i]+" ");
 		}
-		System.out.println();*/
+		System.out.println();
 
 		
 	}
@@ -241,19 +221,6 @@ class Heap
 		//	System.out.println(heapSize);
 		}
 	}
-
-	int ExtractMin()
-	{
-		if(heapSize<0)
-		{
-			return -1; //heap underflow
-		}
-		int min=data[0];
-		data[0]=data[heapSize-1];
-		heapSize--;
-		MinHeapify(0);
-		return min;
-	}
 }
 
 class HeapCodeMin
@@ -271,10 +238,6 @@ class HeapCodeMin
 			System.out.print(data[i]+" ");
 		}
 		System.out.println();
-
-		/*System.out.println("Min Value : "+H.ExtractMin());
-		System.out.println("Min Value : "+H.ExtractMin());
-		System.out.println("Min Value : "+H.ExtractMin());*/
 	
 		H.HeapSort();
 		System.out.print("After heap sort in decreasing order : ");
@@ -287,4 +250,44 @@ class HeapCodeMin
 		
 	}
 }
+```
+
+5.Psuedo Codes for Max. Priority Queue for 0 based index
+-------
+
+### 5.1 Heap-Max(A)  
+
+```
+return A[0]
+```
+
+### 5.2 Extract-Max(A) 
+
+```
+if(A.heap-size<1)
+	error "Heap Underflow."
+max=A[0]
+A[1]=A[A.heap-size-1] 
+A.heap-size--;
+Max-Heapify(A,0)
+return max
+```
+
+### 5.3 Increase-Key(A,i,key) 
+
+```
+if(key<A[i])
+	error "new key is smaller than current key."
+A[i]=key
+while i>0 and A[parent(i)]<A[i]
+	A[i]<-->A[parent(i)]
+	i=parent(i)
+```
+
+### 5.4 Max-Heap-Insert-Key(A,key)   
+
+```
+A.heap-size++;
+A[A.heap-size-1]=infinity
+Increase-Key(A,A.heap-size-1,key)
 ```
