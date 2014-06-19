@@ -21,9 +21,9 @@
 
 + Lecture 3
 
-	+ [Bellman Ford Algo]()
+	+ [Bellman Ford Algo](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-17-bellman-ford/)
 
-	+ [Slides]()
+	+ [Slides](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec17.pdf)
 
 	+ Cormen, pg 651
 
@@ -345,6 +345,7 @@ z : 7
 ```
 
 4.Bellman Ford Algorithm
+-------
 
 ### 4.1 Description
 
@@ -359,8 +360,7 @@ z : 7
 
 ### 4.3 Psuedo Code
 
-Bellman-Ford
-
+Bellman-Ford(G,w,s)
 ```
 Initialize-Single-Source(G,s)
 for i=0 to nVertices-1
