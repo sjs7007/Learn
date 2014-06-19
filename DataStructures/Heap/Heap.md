@@ -163,7 +163,7 @@ class HeapCodeMax
 ```
 
 ```Java
-// Build Min Heap, Heapify, Heap Sort, Extract Min - Min Priority Queue
+// Build Min Heap, Heapify, Heap Sort
 
 class Heap
 {
@@ -290,4 +290,193 @@ while i>0 and A[parent(i)]<A[i]
 A.heap-size++;
 A[A.heap-size-1]=infinity
 Increase-Key(A,A.heap-size-1,key)
+```
+
+6.Java Code
+----
+
+[Max PQ](https://github.com/sjs7007/Learn/blob/master/DataStructures/Heap/HeapMaxPQ.java)
+[Min PQ](https://github.com/sjs7007/Learn/blob/master/DataStructures/Heap/HeapMinPQ.java)
+
+```Java
+//Heap based Max. priority Queue
+
+class PQ
+{
+	int data[],heapSize,n;
+	int infinity = 10000;
+
+	PQ(int x)
+	{
+		n=x;
+		data=new int[n];
+	}
+
+	void MaxHeapify(int i)
+	{
+		int l,r;
+		l=2*i+1; // NOTE +1 because array starst with 0
+		r=l+1;
+		int largest=i;
+		if(l<heapSize && data[l]>data[i])
+		{
+			largest=l;
+		}
+		if(r<heapSize && data[r]>data[largest])
+		{
+			largest=r;
+		}
+		if(largest!=i)
+		{	
+		//	System.out.println("Swapping "+data[i]+" and "+data[largest]+". "+largest);
+			int temp=data[i];
+			data[i]=data[largest];
+			data[largest]=temp;	
+			MaxHeapify(largest);
+		}
+	}
+
+	int ExtractMax()
+	{
+		if(heapSize<1)
+		{
+			return -1; //heap underflow
+		}
+		int max=data[0];
+		data[0]=data[heapSize-1];
+		heapSize--;
+		MaxHeapify(0);
+		return max;
+	}
+
+	void IncreaseKey(int i,int key)
+	{
+		if(key<data[i])
+		{
+			System.out.println("New key is smaller than current key.");
+		}
+		data[i]=key;
+		while(i>0 && data[i/2]<data[i])
+		{
+			int temp=data[i];
+			data[i]=data[i/2];
+			data[i/2]=temp;
+			i=i/2;
+		}
+	}
+
+	void Insert(int key)
+	{
+		heapSize++;
+		data[heapSize-1]=-infinity;
+		IncreaseKey(heapSize-1,key);
+	}
+}
+
+class HeapMaxPQ
+{
+	public static void main(String args[])
+	{
+		PQ P = new PQ(10);
+		P.Insert(1);
+		P.Insert(2);
+		P.Insert(500);
+		P.Insert(3);
+		P.Insert(4);
+		System.out.println("Max :"+P.ExtractMax());
+		
+	}
+}
+
+```
+
+```Java
+//Heap based Min. priority Queue
+
+class PQ
+{
+	int data[],heapSize,n;
+	int infinity = 10000;
+
+	PQ(int x)
+	{
+		n=x;
+		data=new int[n];
+	}
+
+	void MinHeapify(int i)
+	{
+		int l,r;
+		l=2*i+1; // NOTE +1 because array starst with 0
+		r=l+1;
+		int smallest=i;
+		if(l<heapSize && data[l]<data[i])
+		{
+			smallest=l;
+		}
+		if(r<heapSize && data[r]<data[smallest])
+		{
+			smallest=r;
+		}
+		if(smallest!=i)
+		{	
+		//	System.out.println("Swapping "+data[i]+" and "+data[smallest]+". "+smallest);
+			int temp=data[i];
+			data[i]=data[smallest];
+			data[smallest]=temp;	
+			MinHeapify(smallest);
+		}
+	}
+
+	int ExtractMin()
+	{
+		if(heapSize<1)
+		{
+			return -1; //heap underflow
+		}
+		int min=data[0];
+		data[0]=data[heapSize-1];
+		heapSize--;
+		MinHeapify(0);
+		return min;
+	}
+
+	void DecreaseKey(int i,int key)
+	{
+		if(key>data[i])
+		{
+			System.out.println("New key is smaller than current key.");
+		}
+		data[i]=key;
+		while(i>0 && data[i/2]>data[i])
+		{
+			int temp=data[i];
+			data[i]=data[i/2];
+			data[i/2]=temp;
+			i=i/2;
+		}
+	}
+
+	void Insert(int key)
+	{
+		heapSize++;
+		data[heapSize-1]=infinity;
+		DecreaseKey(heapSize-1,key);
+	}
+}
+
+class HeapMinPQ
+{
+	public static void main(String args[])
+	{
+		PQ P = new PQ(10);
+		P.Insert(100);
+		P.Insert(200);
+		P.Insert(500);
+		P.Insert(300);
+		P.Insert(150);
+		System.out.println("Min :"+P.ExtractMin());
+		
+	}
+}
 ```
