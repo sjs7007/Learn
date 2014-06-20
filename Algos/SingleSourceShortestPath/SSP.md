@@ -560,7 +560,7 @@ y : [ t(3) x(9) z(2) ]
 x : [ z(4) ]
 z : [ s(7) x(6) ]
 
-Dijkstra Distances :-  
+BellmanFord Distances :-  
 
 s : 0
 t : 8
