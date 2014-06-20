@@ -7,6 +7,7 @@ class Node
 	Node left,right,p;
 	int key;
 	int spaceCount; //for visualization
+	int level=0;
 
 	Node(int x)
 	{
@@ -141,75 +142,42 @@ class BST
 		Queue<Node> Q = new LinkedList<Node>();
 		Q.add(root);
 		root.spaceCount=7;
-		int count=1; //to keep track of new line
 		int leftMost=-1;
-		for(int i=0;i<root.spaceCount;i++)
-		{
-			System.out.print("\t");
-		}
-		if(root.left!=null)
-		{
-			leftMost = root.spaceCount-1;
-		}
-		else
-		{
-			leftMost=root.spaceCount+1;
-		}
+		int cl=-1;
 		while(!Q.isEmpty())
 		{
-			Node u = Q.poll(); //dequeue
-
-			/*for(int i=0;i<u.spaceCount;i++)
+			Node u = Q.poll(); //dequeue	
+	
+			if(u.level!=cl)
 			{
-				System.out.print("\t");
-			}*/
+				cl=u.level;
+				System.out.println();
+				leftMost=u.spaceCount;
+				for(int i=0;i<leftMost;i++)
+				{
+					System.out.print("\t");
+				}
+			}
 
-	//		System.out.print(u.key+"-->"+u.spaceCount+" ");
 			for(int i=0;i<u.spaceCount-leftMost;i++)
 			{
 				System.out.print("\t");
 			}
-			System.out.print(u.key+"("+u.spaceCount+","+leftMost+")");
-			count--;
-			if(count==0)
-			{
-				System.out.println();
-				//				System.out.print("Printed "+leftMost+" tabs.");
-			}
+
+			System.out.print(u.key+" ");
+			
 			if(u.left!=null)
 			{
 				Q.add(u.left);
 				u.left.spaceCount=u.spaceCount-1;
-//				System.out.println("["+u.left.spaceCount+"]");
-				if(count==0)
-				{
-					leftMost=u.left.spaceCount;
-//					System.out.print("leftmost = "+leftMost);
-					for(int i=0;i<leftMost;i++)
-					{
-						System.out.print("\t");
-					}
-				}
-				count++;
+				u.left.level=u.level+1;
 			}
 			if(u.right!=null)
 			{
 				Q.add(u.right);
 				u.right.spaceCount=u.spaceCount+1;
-//				System.out.println("["+u.right.spaceCount+"]");
-
-				if(count==0)
-				{
-					leftMost=u.right.spaceCount;
-//					System.out.print("leftmost = "+leftMost);
-					for(int i=0;i<leftMost;i++)
-					{
-						System.out.print("\t");
-					}
-				}
-				count++;
+				u.right.level=u.level+1;
 			}
-			
 		}
 	}
 
@@ -228,6 +196,11 @@ class BinarySearchTree
 		B.insert(13);
 		B.insert(3);
 		B.insert(144);
+
+		B.insert(20);
+		B.insert(40);
+		B.insert(30);
+		B.insert(50);
 
 		System.out.print("Inorder Traversal : ");
 		B.inorderTraversal(B.root);
