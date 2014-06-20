@@ -135,6 +135,85 @@ class BST
 			return y;
 		}
 	}
+
+	void visualizeTree() //Seems to work
+	{
+		Queue<Node> Q = new LinkedList<Node>();
+		Q.add(root);
+		root.spaceCount=7;
+		int count=1; //to keep track of new line
+		int leftMost=-1;
+		for(int i=0;i<root.spaceCount;i++)
+		{
+			System.out.print("\t");
+		}
+		if(root.left!=null)
+		{
+			leftMost = root.spaceCount-1;
+		}
+		else
+		{
+			leftMost=root.spaceCount+1;
+		}
+		while(!Q.isEmpty())
+		{
+			Node u = Q.poll(); //dequeue
+
+			/*for(int i=0;i<u.spaceCount;i++)
+			{
+				System.out.print("\t");
+			}*/
+
+	//		System.out.print(u.key+"-->"+u.spaceCount+" ");
+			for(int i=0;i<u.spaceCount-leftMost;i++)
+			{
+				System.out.print("\t");
+			}
+			System.out.print(u.key+"("+u.spaceCount+","+leftMost+")");
+			count--;
+			if(count==0)
+			{
+				System.out.println();
+				//				System.out.print("Printed "+leftMost+" tabs.");
+			}
+			if(u.left!=null)
+			{
+				Q.add(u.left);
+				u.left.spaceCount=u.spaceCount-1;
+//				System.out.println("["+u.left.spaceCount+"]");
+				if(count==0)
+				{
+					leftMost=u.left.spaceCount;
+//					System.out.print("leftmost = "+leftMost);
+					for(int i=0;i<leftMost;i++)
+					{
+						System.out.print("\t");
+					}
+				}
+				count++;
+			}
+			if(u.right!=null)
+			{
+				Q.add(u.right);
+				u.right.spaceCount=u.spaceCount+1;
+//				System.out.println("["+u.right.spaceCount+"]");
+
+				if(count==0)
+				{
+					leftMost=u.right.spaceCount;
+//					System.out.print("leftmost = "+leftMost);
+					for(int i=0;i<leftMost;i++)
+					{
+						System.out.print("\t");
+					}
+				}
+				count++;
+			}
+			
+		}
+	}
+
+
 }
 
 class BinarySearchTree
@@ -168,5 +247,6 @@ class BinarySearchTree
 		System.out.println("Min. Value : "+B.iterativeMin(B.root).key);
 		System.out.println("Successor of "+k+" : "+B.successor(B.recSearch(B.root,k)).key);
 		System.out.println("Predecessor of "+k+" : "+B.predecessor(B.recSearch(B.root,k)).key);
+		B.visualizeTree();
 	}
 }
