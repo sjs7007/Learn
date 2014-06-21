@@ -39,48 +39,48 @@
 
 + Naive Recursive Solution
 
-**Cut-Rod(p,n)**   
-```
-if(n==0)
-	return 0
-q=-1
-for i=1 to n
-	q=max(q,p[i]+Cut-Rod(p,n-i))
-return q
-```
+	**Cut-Rod(p,n)**   
+	```
+	if(n==0)
+		return 0
+	q=-1
+	for i=1 to n
+		q=max(q,p[i]+Cut-Rod(p,n-i))
+	return q
+	```
 
 + Memoized Version
 
-Store intermediate results in array.   
+	Store intermediate results in array.   
 
-**Memoized-Cut-Rod(p,n,r)**
-```
-if(r[n]>=0)
-	return r[n]
-if(n==0)
-	q=0
-else q=-1
-	for i=1 to n
-		q=max(q,p[i]+Memoized-Cut-Rod(p,n-i,r))
-r[n]=q
-return q
-		q
-```
+	**Memoized-Cut-Rod(p,n,r)**
+	```
+	if(r[n]>=0)
+		return r[n]
+	if(n==0)
+		q=0
+	else q=-1
+		for i=1 to n
+			q=max(q,p[i]+Memoized-Cut-Rod(p,n-i,r))
+	r[n]=q
+	return q
+			q
+	```
 
 + Bottom up version.
 
-Solve subproblems in topological order.   
+	Solve subproblems in topological order.   
 
-**Bottom-Up-Cut-Rod(p,n)**
-```
-r[0..n] array of profits
-r[0]=0
-for j=1 to n
-	q=-1
-	for i=1 to j
-		q=max(q,p[i]+r[j-i])
-		r[j]=q
-return r[n]
-```
+	**Bottom-Up-Cut-Rod(p,n)**
+	```
+	r[0..n] array of profits
+	r[0]=0
+	for j=1 to n
+		q=-1
+		for i=1 to j
+			q=max(q,p[i]+r[j-i])
+			r[j]=q
+	return r[n]
+	```
 
 + Java Codes : [Recusive Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/RodCutting1.java), [Memoized Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/RodCutting2.java), [Bottom Up Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/RodCutting3.java)
