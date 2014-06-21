@@ -1,0 +1,10 @@
+maxProfit for length 1 : 1
+maxProfit for length 2 : 5
+maxProfit for length 3 : 8
+maxProfit for length 4 : 10
+maxProfit for length 5 : 13
+maxProfit for length 6 : 17
+maxProfit for length 7 : 18
+maxProfit for length 8 : 22
+maxProfit for length 9 : 25
+maxProfit for length 10 : 30

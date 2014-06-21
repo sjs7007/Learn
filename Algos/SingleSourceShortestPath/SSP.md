@@ -27,6 +27,12 @@
 
 	+ Cormen, pg 651
 
++ Lecture 4
+
+	+ [Speeding up Dijkstra](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-18-speeding-up-dijkstra/)
+
+	+ [Slides](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec18.pdf)
+
 2.Common Psuedo Codes
 -----
 
