@@ -84,3 +84,17 @@
 	```
 
 + Java Codes : [Recusive Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/RodCutting1.java), [Memoized Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/RodCutting2.java), [Bottom Up Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/RodCutting3.java)
+
+### 3.2 Mario - Problem on Hacker Earth
+
++ [Link](http://www.hackerearth.com/problem/algorithm/roy-and-little-mario-4/)
+
++ Solution 
+
+	+ ans(1)=1,ans(2)=2,ans(3)=4
+
+	+ ans(n>3) = keep 1 block separate and ans(n-1) + keep 2 blocks separate and ans(n-2) + keep 3 blocks separate and ans(n-3)
+
+	+ ![paper solution](he43Notes.jpg)
+
++ [Java Code Link](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/he43.java)
