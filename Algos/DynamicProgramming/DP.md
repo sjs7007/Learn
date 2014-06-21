@@ -95,6 +95,6 @@
 
 	+ ans(n>3) = keep 1 block separate and ans(n-1) + keep 2 blocks separate and ans(n-2) + keep 3 blocks separate and ans(n-3)
 
-	+ ![paper solution](he43Notes.jpg)
+	![paper solution](he43Notes.jpg)
 
-+ [Java Code Link](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/he43.java)
++ [Java Code Link using Bottom Up Approach](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/he43.java)
