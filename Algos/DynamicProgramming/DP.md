@@ -98,3 +98,29 @@
 	![paper solution](he43Notes.jpg)
 
 + [Java Code Link using Bottom Up Approach](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/he43.java)
+
+### 3.3 Knapsack Problem - Spoj
+
++ [Link]http://www.spoj.com/problems/KNAPSACK/)
+
++ Solution
+
+	+ Recursive Solution : ans(currentCapacity,n)=max(ans(currentCapacity-size of nth item,n-1)+profit of nth item, ans(currentCapacity,n-1))
+
+	+ i.e. return max. of [subproblem for n-1 with new capacity+ profit of nth item] and [subproblem for n-1 with old capacity]
+
+	+ Bottom up solution
+
+		getOptimal(size[],value[],currentCapacity,nItems,answer[][])
+		```
+		for i in range [0,nItems]
+			for j in range [0,currentCapacity]
+				if(i or j ==0)
+					answer[i][j]=0
+				else if(size[i-1]>j)
+					answer[i][j]=answer[i-1][j]
+				else
+					answer[i][j]=ma(answer[i-1][j],answer[i-1][j-size[i-1]]+value[i-1])
+		```
+
++ Java Codes : [Recursive Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/KnapsackRecursive.java), [Bottom Up DP solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/KnapsackDP.java)
