@@ -101,7 +101,7 @@
 
 ### 3.3 Knapsack Problem - Spoj
 
-+ [Link]http://www.spoj.com/problems/KNAPSACK/)
++ [Link](http://www.spoj.com/problems/KNAPSACK/)
 
 + Solution
 
