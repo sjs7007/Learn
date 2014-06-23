@@ -4,7 +4,7 @@
 #include <stdio.h>
 using namespace std;
 
-int getOptimal(int b[][1000],int y[][1000],int row,int column,int answer[][1000]);
+int getOptimal(int b[][1000],int y[][1000],int row,int column);
 int max(int x,int y);
 
 int answer[1000][1000];
@@ -47,13 +47,13 @@ int main()
 			}
 		}
 
-		int ans = getOptimal(b,y,n,m,answer);
+		int ans = getOptimal(b,y,n,m);
 		cout<<ans<<endl;
 		scanf("%d %d",&n,&m);
 	}
 }
 
-int getOptimal(int b[][1000],int y[][1000],int row,int column,int answer[][1000])
+int getOptimal(int b[][1000],int y[][1000],int row,int column)
 {
 	if(row==0 || column==0)
 	{
@@ -77,7 +77,7 @@ int getOptimal(int b[][1000],int y[][1000],int row,int column,int answer[][1000]
 			ySum = ySum + y[row-1][i];
 		}
 
-		int temp = max(ySum+getOptimal(b,y,row-1,column,answer),bSum+getOptimal(b,y,row,column-1,answer));
+		int temp = max(ySum+getOptimal(b,y,row-1,column),bSum+getOptimal(b,y,row,column-1));
 
 		answer[row-1][column-1]=temp;
 
