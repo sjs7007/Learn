@@ -124,3 +124,21 @@
 		```
 
 + Java Codes : [Recursive Solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/KnapsackRecursive.java), [Bottom Up DP solution](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/KnapsackDP.java)
+
+### 3.4 Martian - SPOJ
+
++ [Link](http://www.spoj.com/problems/MARTIAN/)
+
++ Solution 
+
+	+ Recursive Solution 
+
+		getOptimal(row,column) = max(ySum+getOptimal(b,y,row-1,column,answer),bSum+getOptimal(b,y,row,column-1,answer));
+
+	+ i.e. return max of [including all y in this row + subproblem for (row-1,column)] and [including all b in this column + subproblem for (row,column-1)]
+
+	+ Basic idea is start from corner end and decide whether to go left or up. If left, include all in left(y) or else all in up(b).
+
++ C++ Code : [Martian Memoized](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MartianDP.cpp)  
+
+**NOTE** : Java is too slow for this problem.
