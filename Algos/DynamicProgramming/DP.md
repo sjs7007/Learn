@@ -142,3 +142,13 @@
 + C++ Code : [Martian Memoized](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MartianDP.cpp)  
 
 **NOTE** : Java is too slow for this problem.
+
+### 3.5 Mixtures - SPOJ
+
++ [Link](http://www.spoj.com/problems/MIXTURES/)
+
++ Solution
+
+	+ Fill later
+
++ C++ Code : [Mixtures Memoized](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MixturesDP.cpp)

@@ -1,7 +1,5 @@
 //http://www.spoj.com/problems/MIXTURES/
 
-//not yet done as of now
-
 #include <iostream>
 #include <stdio.h>
 using namespace std;
@@ -9,6 +7,8 @@ using namespace std;
 int getOptimal(int start,int n, int potions[]);
 
 //int potions[100];
+
+//right!
 
 int main()
 {
@@ -22,7 +22,7 @@ int main()
 		scanf("%d",&potions[i]);
 	}
 
-	cout<<getOptimal(1,n,potions)<<endl;
+	cout<<getOptimal(0,n,potions)<<endl;
 
 }
 
