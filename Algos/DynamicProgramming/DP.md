@@ -152,3 +152,15 @@
 	+ Fill later
 
 + C++ Code : [Mixtures Memoized](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MixturesDP.cpp)
+
+### 3.6 Max Product Cutting : GeeksForGeeks
+
++ [Link](http://www.geeksforgeeks.org/dynamic-programming-set-36-cut-a-rope-to-maximize-product/)
+
++ Solution
+
+	+ maxProd(n)=for k in range[1,n-1], max of [k*(n-k),k*maxProd(n-k),maxProd(k)*(n-k),maxProd(k)*maxProd(n-k)]
+
+	+ in geeks for geeks maxProd(k)*maxProd(n-k) is not considered. **WHY?** Figure out.
+
++ C++ Code : [Max Product Cutting](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MaxProductCutting.cpp)
