@@ -163,4 +163,4 @@
 
 	+ in geeks for geeks maxProd(k)*maxProd(n-k) is not considered. **WHY?** Figure out.
 
-+ C++ Code : [Max Product Cutting](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MaxProductCutting.cpp)
++ C++ Code : [Max Product Cutting](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/MaxProdCutting.cpp)
