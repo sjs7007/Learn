@@ -40,6 +40,7 @@ int getMCPCost(int cost[3][3],int m,int n)
 	}
 	else if(DP[m][n]>0)
 	{
+		//cout<<"Free Call!"<<endl;
 		return DP[m][n];
 	}
 	else

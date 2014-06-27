@@ -164,3 +164,57 @@
 	+ in geeks for geeks maxProd(k)*maxProd(n-k) is not considered. **WHY?** Figure out.
 
 + C++ Code : [Max Product Cutting](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/MaxProdCutting.cpp)
+
+### 3.7 Min Cost Path : GeeksForGeeks
+
++ [Link](http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/)
+
++ Solution
+
+	+ DP[i][j]=cost[i][j]+min(cost[i-1][j],cost[i][j-1],cost[i-1][j-1])
+
+	+ if(i==0 && j==0), return cost[i][j]
+
+	+ if(i<0 or j<0), then it is not reachable and hence infinity should be returned
+
++ C++ Code : [Min Cost Path](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/MCP.cpp)
+
+### 3.8 Longest Common Subsequence : GeeksForGeeks
+
++ [Link](http://www.geeksforgeeks.org/dynamic-programming-set-4-longest-common-subsequence/)
+
++ Solution
+
+```
+1) Optimal Substructure: 
+Let the input sequences be X[0..m-1] and Y[0..n-1] of lengths m and n respectively. And let L(X[0..m-1], Y[0..n-1]) be the length of LCS of the two sequences X and Y. Following is the recursive definition of L(X[0..m-1], Y[0..n-1]).
+
+If last characters of both sequences match (or X[m-1] == Y[n-1]) then
+L(X[0..m-1], Y[0..n-1]) = 1 + L(X[0..m-2], Y[0..n-2])
+
+If last characters of both sequences do not match (or X[m-1] != Y[n-1]) then
+L(X[0..m-1], Y[0..n-1]) = MAX ( L(X[0..m-2], Y[0..n-1]), L(X[0..m-1], Y[0..n-2])
+
+Examples:
+1) Consider the input strings “AGGTAB” and “GXTXAYB”. Last characters match for the strings. So length of LCS can be written as:
+L(“AGGTAB”, “GXTXAYB”) = 1 + L(“AGGTA”, “GXTXAY”)
+
+2) Consider the input strings “ABCDGH” and “AEDFHR. Last characters do not match for the strings. So length of LCS can be written as:
+L(“ABCDGH”, “AEDFHR”) = MAX ( L(“ABCDG”, “AEDFHR”), L(“ABCDGH”, “AEDFH”) )
+
+So the LCS problem has optimal substructure property as the main problem can be solved using solutions to subproblems.
+```
+
++ C++ Code : [LCS](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LCSDP.cpp)
+
+### 3.9 Longest Increasing Subsequence
+
++ [Link](http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/)
+
++ Solution
+
+	+ Each DP[i] stores length of max increasing sequence which includes data[i]
+
+	+ DP[i] = 1 + max(DP[j]) where j<i and data[i]>data[j]
+
++ C++ Code : [Longest Increasing Subsequence](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LongestIncreasingSeq.cpp)
