@@ -14,8 +14,8 @@ class ACMAKER2
 			}
 		}
 
-		char abr[]={'r','a','d','r','a','n'};
-		String exp[]={"radio","detection","ranging"};
+		char abr[]={'a','c','m'};
+		String exp[]={"academy","computer","makers"};
 		System.out.println(DP(0,0,abr,exp,0));
 	}
 
