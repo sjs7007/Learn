@@ -1,37 +1,46 @@
 // http://www.spoj.com/problems/ACMAKER/
+//Accepted!
 
 import java.util.*;
+import java.io.*;
 
-class ACMAKER2Mod4
+class tempModIdeOne
 {
-	public static int DPAnswer[][][]=new int[95][95][95];
+	public static int DPAnswer[][][]=new int[50][50][50];
 	
-	public static void main(String args[])
+	public static void main(String args[]) throws IOException
 	{
 		Scanner ip = new Scanner(System.in);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
 
 		while(true)
 		{
 			//char abr[]={'a','c','m'};
 			
 			ip = new Scanner(System.in);
-			int t=ip.nextInt();
+			int t=Integer.parseInt(reader.readLine());
+		//	System.out.println("Here1");
 			if(t==0)
 			{
 				break;
 			}
 			String insig[]=new String[t];
 			ip=new Scanner(System.in);
+		//		System.out.println("Here2");
 			for(int i=0;i<t;i++)
 			{
-				insig[i]=ip.nextLine();
+				ip=new Scanner(System.in);
+				insig[i]=reader.readLine();
 				//System.out.println(insig[i]);
 			}
+			//	System.out.println("Here3");
 
 			while(true)
 			{
 				ip=new Scanner(System.in);
-				String temp = ip.nextLine();
+				String temp =reader.readLine();
+				//	System.out.println("Here4");
 				String breakS = new String("LAST CASE");
 				if(temp.equals(breakS))
 				{
@@ -66,11 +75,11 @@ class ACMAKER2Mod4
 
 				//System.out.println(tempArray[0].toLowerCase()+" "+temp);
 
-				for(int i=0;i<95;i++)
+				for(int i=0;i<50;i++)
 				{
-					for(int j=0;j<95;j++)
+					for(int j=0;j<50;j++)
 					{
-						for(int k=0;k<95;k++)
+						for(int k=0;k<50;k++)
 						{
 							DPAnswer[i][j][k]=-1;
 						}
