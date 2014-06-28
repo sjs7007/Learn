@@ -1,8 +1,8 @@
 // http://www.spoj.com/problems/ACMAKER/
 
-class ACMAKER2
+class ACMAKER2Mod
 {
-	public static int DPAnswer[][]=new int[100][100];
+	public static int DPAnswer[][][]=new int[100][100][100];
 	
 	public static void main(String args[])
 	{
@@ -10,24 +10,28 @@ class ACMAKER2
 		{
 			for(int j=0;j<100;j++)
 			{
-				DPAnswer[i][j]=-1;
+				for(int k=0;k<100;k++)
+				{
+					DPAnswer[i][j][k]=-1;
+				}
 			}
 		}
 
-		//char abr[]={'a','c','m'};
-		//String exp[]={"academy","computer","makers"};
+		char abr[]={'a','c','m'};
+		String exp[]={"academy","computer","makers"};
 		//char abr[]={'r','a','d','r','a','n'};
 		//String exp[]={"radio","detection","ranging"};
 		//char abr[]={'d','o','d','g','i','n','g'};
 		//String exp[]={"radio","detection","ranging"};
 		
-		char abr[]={'a','c','m','i'};
-		String exp[]={"academy","ccomiputer","iakers"};
+		//char abr[]={'a','c','m','i'};
+		//String exp[]={"academy","ccomiputer","iakers"};
 		System.out.println(DP(0,0,abr,exp,0));
 	}
 
 	public static int DP(int i,int j,char abr[],String exp[],int currentPInWord)
 	{
+		int originalCurrentPInWord = currentPInWord;
 		if(i==abr.length)
 		{
 			return 1;
@@ -36,10 +40,11 @@ class ACMAKER2
 		{
 			return 0;
 		}
-		/* else if(DPAnswer[i][j]>0)
+		else if(DPAnswer[i][j][originalCurrentPInWord]>=0)
 		{
-			return DPAnswer[i][j];
-		}*/
+			//System.out.println("Free Call for "+i+" "+j+" "+currentPInWord+", returning "+DPAnswer[i][j][originalCurrentPInWord]+".");
+			return DPAnswer[i][j][currentPInWord];
+		}
 		else
 		{
 			int temp=0;
@@ -47,7 +52,7 @@ class ACMAKER2
 			{
 				if(abr[i]==exp[j].charAt(k))
 				{
-					System.out.println(abr[i]);
+					//System.out.println(abr[i]);
 					currentPInWord=k+1;
 					temp+=DP(i,j,abr,exp,currentPInWord);
 					if(((abr.length-(i+1))-(exp.length-(j+1)))>0)
@@ -56,13 +61,16 @@ class ACMAKER2
 					}
 					temp+=DP(i+1,j+1,abr,exp,0); 
 
-					System.out.println(i+" "+j+" "+currentPInWord);
-					System.out.println((i+1)+" "+j+" "+currentPInWord);
-					System.out.println((i+1)+" "+(j+1)+"0");
+					/*System.out.println(i+" "+j+" "+currentPInWord);
+					if(((abr.length-(i+1))-(exp.length-(j+1)))>0)
+						System.out.println((i+1)+" "+j+" "+currentPInWord);
+
+					System.out.println((i+1)+" "+(j+1)+"0"); */
 					break;
 				}
 			}
-			//DPAnswer[i][j]=temp;
+			DPAnswer[i][j][originalCurrentPInWord]=temp;
+		//	System.out.println(i+" "+j+" "+currentPInWord+" stored with value : "+DPAnswer[i][j][originalCurrentPInWord]+".");
 			return temp;
 		}
 	}
