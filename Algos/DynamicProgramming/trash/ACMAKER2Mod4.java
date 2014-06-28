@@ -4,7 +4,7 @@ import java.util.*;
 
 class ACMAKER2Mod4
 {
-	public static int DPAnswer[][][]=new int[100][100][100];
+	public static int DPAnswer[][][]=new int[150][150][150];
 	
 	public static void main(String args[])
 	{
@@ -64,11 +64,11 @@ class ACMAKER2Mod4
 
 				//System.out.println(tempArray[0].toLowerCase()+" "+temp);
 
-				for(int i=0;i<100;i++)
+				for(int i=0;i<150;i++)
 				{
-					for(int j=0;j<100;j++)
+					for(int j=0;j<150;j++)
 					{
-						for(int k=0;k<100;k++)
+						for(int k=0;k<150;k++)
 						{
 							DPAnswer[i][j][k]=-1;
 						}
