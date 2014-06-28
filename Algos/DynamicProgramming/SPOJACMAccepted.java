@@ -124,12 +124,12 @@ class SPOJACMAccepted
 				{
 					//System.out.println(abr[i]);
 					currentPInWord=k+1;
-					temp+=DP(i,j,abr,exp,currentPInWord);
+					temp+=DP(i,j,abr,exp,currentPInWord); //case where you look for same character again in current word
 					if(((abr.length-(i+1))-(exp.length-(j+1)))>0)
 					{
-						temp+=DP(i+1,j,abr,exp,currentPInWord);
+						temp+=DP(i+1,j,abr,exp,currentPInWord); //case where you look for more characters in same word
 					}
-					temp+=DP(i+1,j+1,abr,exp,0); 
+					temp+=DP(i+1,j+1,abr,exp,0);  //case where you look for more characters in next word
 
 					/*System.out.println(i+" "+j+" "+currentPInWord);
 					if(((abr.length-(i+1))-(exp.length-(j+1)))>0)
