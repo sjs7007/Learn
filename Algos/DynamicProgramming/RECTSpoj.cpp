@@ -1,4 +1,5 @@
 //http://www.spoj.com/problems/AE00/
+//ACCEPTED!
 
 #include<iostream>
 using namespace std;
