@@ -6,7 +6,7 @@
 
 #include<iostream>
 using namespace std;
-#include<math.h> //for floor
+//#include<math.h> //for floor | int already rounds down, so not needed
 #include <map> //for map ds from STL
 
 unsigned long int getOptimal(unsigned long int n);
@@ -46,9 +46,14 @@ unsigned long int getOptimal(unsigned long int n)
 		unsigned long int y = n/3;
 		unsigned long int z = n/4;
 
-		x = max(x,getOptimal(x));
+		/*x = max(x,getOptimal(x)); 
 		y = max(y,getOptimal(y));
-		z = max(z,getOptimal(z));
+		z = max(z,getOptimal(z));*/
+
+		//max uneccessary, we are already checking at end
+		x=getOptimal(x);
+		y=getOptimal(y);
+		z=getOptimal(z);
 
 		unsigned long int temp = max(n,x+y+z);
 		DP[n] = temp;
