@@ -231,8 +231,24 @@ So the LCS problem has optimal substructure property as the main problem can be 
 
 		= DP[i][j][newK] --> The case where you look for more no. of same character in the same word 
 
-		+ DP[i+1][j][newK] --> The case where you start to look for the next characters in same word
+			+
 
-		+ DP[i+1][j+1][0] --> The case where you look for next characters in next word
+		 DP[i+1][j][newK] --> The case where you start to look for the next characters in same word
+
+		 	+
+
+		 DP[i+1][j+1][0] --> The case where you look for next characters in next word
 
 + Java Code : [ACMAKER](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/SPOJACMAccepted.java)
+
+### 3.11 COINS - SPOJ
+
++ [Link](http://www.spoj.com/problems/COINS/)
+
++ Solution
+
+	+ Array size too large to store DP hence use STL maps. [Example](https://github.com/sjs7007/Learn/blob/master/DataStructures/mapTest.cpp)
+
+	+ DP[n] = max(n,DP[n/2]+DP[n/3]+DP[n/4])
+
++ C++ Code : [COINS](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/COINSMap.cpp)
