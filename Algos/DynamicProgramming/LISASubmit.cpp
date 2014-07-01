@@ -7,30 +7,35 @@
 using namespace std;
 #include<string.h> //forstrcpy
 
-int getOptimalMax(char inputArray[],int i,int j);
-int getOptimalMin(char inputArray[],int i,int j);
-int DPMax[100][100];
-int DPMin[100][100];
+long long int getOptimalMax(char inputArray[], int i,int j);
+long long int getOptimalMin(char inputArray[], int i,int j);
+long long int DPMax[100][100];
+long long int DPMin[100][100];
 
 int main()
 {
-	string input;
-	cin >>input;
-	char inputArray[input.length()+1];
-	strcpy(inputArray,input.c_str());
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+		string input;
+		cin >>input;
+		char inputArray[input.length()+1];
+		strcpy(inputArray,input.c_str());
 
-	memset(DPMax,-1,sizeof(DPMax));
-	memset(DPMin,-1,sizeof(DPMin));
+		memset(DPMax,-1,sizeof(DPMax));
+		memset(DPMin,-1,sizeof(DPMin));
 
-	//cout<<getOptimalMax(inputArray,0,input.length()-1);
-	cout<<getOptimalMax(inputArray,0,input.length()-1)<<" "<<getOptimalMin(inputArray,0,input.length()-1);
+		//cout<<getOptimalMax(inputArray,0,input.length()-1);
+		cout<<getOptimalMax(inputArray,0,input.length()-1)<<" "<<getOptimalMin(inputArray,0,input.length()-1)<<endl;
+	}
 }
 
-int getOptimalMax(char inputArray[],int i,int j)
+long long int getOptimalMax(char inputArray[],int i,int j)
 {
 	if(i==j)
 	{
-		int temp = inputArray[i]-'0';
+		long long int temp = inputArray[i]-'0';
 		return temp;
 	}
 	else if(DPMax[i][j]>0)
@@ -40,17 +45,17 @@ int getOptimalMax(char inputArray[],int i,int j)
 	}
 	else
 	{
-		int max = -1;
+		long long int max = -1;
 
 		for(int k=i+1;k<=j-1;k=k+2)
 		{	
 			
 		//	cout<<"Calling "<<i<<" "<<(k-1)<<" and "<<(k+1)<<" "<<j<<endl;
-			int temp1 = getOptimalMax(inputArray,i,k-1);
-			int temp2 = getOptimalMax(inputArray,k+1,j);
-			int temp3=-1;
+			long long int temp1 = getOptimalMax(inputArray,i,k-1);
+			long long int temp2 = getOptimalMax(inputArray,k+1,j);
+			long long int temp3=-1;
 			
-		//	int temp1=2,temp2=4,temp3;
+		//	long long int temp1=2,temp2=4,temp3;
 			if(inputArray[k]=='+')
 			{
 				temp3 = temp1+temp2;
@@ -71,11 +76,11 @@ int getOptimalMax(char inputArray[],int i,int j)
 	}
 }
 
-int getOptimalMin(char inputArray[],int i,int j)
+long long int getOptimalMin(char inputArray[], int i, int j)
 {
 	if(i==j)
 	{
-		int temp = inputArray[i]-'0';
+		long long int temp = inputArray[i]-'0';
 		return temp;
 	}
 	else if(DPMin[i][j]>0)
@@ -85,17 +90,17 @@ int getOptimalMin(char inputArray[],int i,int j)
 	}
 	else
 	{
-		int min = -1;
+		long long int min = -1;
 
 		for(int k=i+1;k<=j-1;k=k+2)
 		{	
 			
 		//	cout<<"Calling "<<i<<" "<<(k-1)<<" and "<<(k+1)<<" "<<j<<endl;
-			int temp1 = getOptimalMin(inputArray,i,k-1);
-			int temp2 = getOptimalMin(inputArray,k+1,j);
-			int temp3=-1;
+			long long int temp1 = getOptimalMin(inputArray,i,k-1);
+			long long int temp2 = getOptimalMin(inputArray,k+1,j);
+			long long int temp3=-1;
 			
-		//	int temp1=2,temp2=4,temp3;
+		//	long long int temp1=2,temp2=4,temp3;
 			if(inputArray[k]=='+')
 			{
 				temp3 = temp1+temp2;
