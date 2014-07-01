@@ -41,7 +41,7 @@ long long int getOptimalMax(char inputArray[],int i,int j)
 		long long int temp = inputArray[i]-'0';
 		return temp;
 	}
-	else if(DPMax[i][j]>0)
+	else if(DPMax[i][j]>=0)
 	{
 		//cout<<"Free Call!"<<endl;
 		return DPMax[i][j];
@@ -86,7 +86,7 @@ long long int getOptimalMin(char inputArray[], int i, int j)
 		long long int temp = inputArray[i]-'0';
 		return temp;
 	}
-	else if(DPMin[i][j]>0)
+	else if(DPMin[i][j]>=0)
 	{
 		//cout<<"Free Call!"<<endl;
 		return DPMin[i][j];
