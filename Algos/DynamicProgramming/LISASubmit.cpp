@@ -6,6 +6,7 @@
 #include<iostream>
 using namespace std;
 #include<string.h> //forstrcpy
+#include<stdio.h>
 
 long long int getOptimalMax(char inputArray[], int i,int j);
 long long int getOptimalMin(char inputArray[], int i,int j);
@@ -18,8 +19,10 @@ int main()
 	cin>>t;
 	for(int i=0;i<t;i++)
 	{
-		string input;
-		cin >>input;
+		char temp[101];
+		scanf("%100s", temp);
+		string input=temp;
+		//cin >>input;
 		char inputArray[input.length()+1];
 		strcpy(inputArray,input.c_str());
 
