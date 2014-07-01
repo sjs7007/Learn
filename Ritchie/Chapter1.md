@@ -5,7 +5,7 @@
 
 + %kd will make the output right justified in a field k digits wide.
 
-+ %p.qf will print as floating point, at least 6 p characters wide and q after decimal point.
++ %p.qf will print as floating point, at least p characters wide and q after decimal point.
 
 2.Symbolic Constants
 -----
@@ -78,7 +78,7 @@ implicit from context.
 
 + [Global/External Variables Code](global.c)
 
-+ **NOTE*** : The above example works without declaration of variable inside main function. HOW? 
++ **NOTE** : The above example works without declaration of variable inside main function. HOW? 
 
 This is how :-
 
