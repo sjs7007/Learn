@@ -252,3 +252,15 @@ So the LCS problem has optimal substructure property as the main problem can be 
 	+ DP[n] = max(n,DP[n/2]+DP[n/3]+DP[n/4])
 
 + C++ Code : [COINS](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/COINSMap.cpp)
+
+### 3.12 LISA - SPOJ
+
++ [Link](http://www.spoj.com/problems/LISA/)
+
++ Solution
+
+	+ DP[i,j]=max for all k=i+1 to j-1, where j=last index in array is [DP[i,k-1] <kth operation> DP[j+1,k]]
+
++ NOTE : free call case being given as >0 instead of correct >=0 was causing TLE.
+
++ C++ Code : [LISA]((https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LISASubmit.cpp)

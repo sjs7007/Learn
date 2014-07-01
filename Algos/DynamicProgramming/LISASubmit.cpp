@@ -2,6 +2,8 @@
 // 18:48 - 19:26 max done,memoize it - 19:31 memoized done,work for min function next
 //19:36 - All done for min! Submit.
 //19:48 correction made on second memset! submission version in LISASubmit
+//NOTE : free call case being given as >0 instead of correct >=0 was causing TLE.
+//Accepted
 
 #include<iostream>
 using namespace std;
