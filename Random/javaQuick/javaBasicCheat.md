@@ -1,6 +1,10 @@
 # "Prologue"
 
-A basic introduction to get you started with Java. It is a purely object oriented language which is just a fancy way to say everything has to be put inside a class here. So, all programs need to have at least one class which should be same as the name of your program. Otherwise it will cause a problem when you try to run it. This class should always have a main method with which the program execution begins. So here is your first example of a simple hello world :-
+A basic introduction to get you started with Java. It is a purely object oriented language which is just a fancy way to say everything has to be put inside a class here. So, all programs need to have at least one class which should be same as the name of your program. Otherwise it will cause a problem when you try to run it. This class should always have a main method with which the program execution begins. 
+
+Java code is machine independent. That is, once you have compiled your code on machine you can use the class files obtained as output to run it on some other machine which has the java interpreter. The class files contain code for the java virtual machine. Different systems may have different compiler and virtual machine implementations. However since the machine on which code is finally executed is still the "Java Virtual Machine", machine independency is obtained.
+
+So here is your first example of a simple hello world :-
 
 [Obligatory Hello World!](Example1.java)
 
@@ -302,6 +306,12 @@ class Example7
 	}
 }
 ```
+# 6.More Things you need to look into
+
++ Inheritance.
++ Exception Handling.
++ Destructors.
++ Read up on how Java does garbage collection.
 
 
 
