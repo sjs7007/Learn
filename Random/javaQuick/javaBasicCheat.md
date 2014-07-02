@@ -2,7 +2,7 @@
 
 A basic introduction to get you started with Java. It is a purely object oriented language which is just a fancy way to say everything has to be put inside a class here. So, all programs need to have at least one class which should be same as the name of your program. Otherwise it will cause a problem when you try to run it. This class should always have a main method with which the program execution begins. So here is your first example of a simple hello world :-
 
-[Link](Example1.java)
+[Obligatory Hello World!](Example1.java)
 
 Compilation inst : javac Example1.java ; java Example1
 
@@ -32,6 +32,8 @@ class Example1
 
 + Else just use, System.out.print()
 
++ [Some More Print Examples](Example1_1.java)
+
 # 1.Input
 
 1.1 Using Scanner
@@ -59,7 +61,7 @@ class Example1
 
 + Google. You can do just fine using Scanner in most cases. At least worked well for me till now. :P
 
-2.Arrays
+# 2.Arrays
 ----
 
 + ```int temp[]={3,4,5};```
@@ -185,9 +187,31 @@ class Example3
 
 	+ substring(i,j) : return substring [i,j) <-- i.e., jth index not included
 
-	
-	
+	+ replace(char x,char y) : replace all occurances of x with y and return modified string
 
++ You can combine two strings by using "+" operator directly.
+
+	```String temp = "hello"+" world\n";```
+
++ [String Example Code](Example5.java)
+
+4.Various Conversions
+----
+
+[Various Conversions](Example6.java)
+
+	
+5.Random Basic Stuff
+----
+
++ For math operations, Math class objects are normally used. It is present inside lang package which is automatically imported in every java program hence no explicit imports are necessary.
+
+	+ Math.pow(x,y) : return x^y
+	+ Math.sqrt(x)
+	+ Math.floor()
+	+ Math.ceil()
+
+[Random](Example7.java)
 
 
 
