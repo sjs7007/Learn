@@ -195,9 +195,60 @@ class Example3
 
 + [String Example Code](Example5.java)
 
+```Java
+//Example 5 : Strings
+
+class Example5
+{
+	public static void main(String args[])
+	{
+		String test = "hello";
+		System.out.println(test.toUpperCase());
+		System.out.println(test.toLowerCase());
+		System.out.println("Replace all e with u : "+test.replace('e','u'));
+		System.out.println("substring : "+test.substring(0,3));
+	}
+}
+```
+
 # 4.Various Conversions
 
 [Various Conversions](Example6.java)
+
+```Java
+class Example6
+{
+	public static void main(String args[])
+	{
+		String s="10";
+
+		//String to Integer Conversions
+
+		//String to integer
+		int n = Integer.parseInt(s); 
+		System.out.println(s+ " in base 10 is : "+n);
+		//String to integer by default has base 10 but you can give other bases like 2 for e.g.
+		n = Integer.parseInt(s,2);
+		System.out.println(s+" in base 2 is : "+n);
+
+
+		//Character to string
+		char c='A';
+		s = Character.toString(c);
+
+		//type casting 
+		int cAscii = (int)(c);
+		System.out.println(c+" typecasted to int : "+cAscii);
+
+		//Integer to string
+		String temp=Integer.toString(n);
+		System.out.println(n+" in base 10 as string : "+temp);
+		
+		temp=Integer.toString(n,2);
+		System.out.println(n+" in base 2 as string : "+temp);
+	}
+}
+```
 
 	
 # 5.Random Basic Stuff
@@ -210,6 +261,34 @@ class Example3
 	+ Math.ceil()
 
 [Random](Example7.java)
+
+```Java
+//Random stuff. Example 7
+
+class Example7
+{
+	public static void main(String args[])
+	{
+		//Math stuff 
+
+		int k=2;
+
+		int n = (int)Math.pow(k,3); //actually returns double data type. Howevver typecasted to int to avoid precision error message.
+		System.out.println(k+" raised to 3 is : "+n);
+
+		double d = Math.sqrt(k);
+		System.out.println("Square root of "+k+" is : "+d);
+
+		//Say you only want to print 3 decimal points use below syntax
+		System.out.printf("Square root of "+k+" is %.3f \n",d);
+
+		d=Math.random();
+		System.out.println("Random decimal in range [0,1) : "+d);
+
+		System.out.println("Floor and ceil : "+Math.floor(d)+" "+Math.ceil(d));
+	}
+}
+```
 
 
 
