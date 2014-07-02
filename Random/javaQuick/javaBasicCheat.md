@@ -62,7 +62,6 @@ class Example1
 + Google. You can do just fine using Scanner in most cases. At least worked well for me till now. :P
 
 # 2.Arrays
-----
 
 + ```int temp[]={3,4,5};```
 + ```int temp[]=new int[size];```
@@ -166,8 +165,7 @@ class Example3
 
 	```
 
-3.Strings
-----
+# 3.Strings
 
 + User Input : Covered above.
 
@@ -195,14 +193,12 @@ class Example3
 
 + [String Example Code](Example5.java)
 
-4.Various Conversions
-----
+# 4.Various Conversions
 
 [Various Conversions](Example6.java)
 
 	
-5.Random Basic Stuff
-----
+# 5.Random Basic Stuff
 
 + For math operations, Math class objects are normally used. It is present inside lang package which is automatically imported in every java program hence no explicit imports are necessary.
 
