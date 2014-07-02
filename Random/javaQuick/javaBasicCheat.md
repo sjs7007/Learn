@@ -1,4 +1,4 @@
-# "Prologue"
+# Prologue
 
 A basic introduction to get you started with Java. It is a purely object oriented language which is just a fancy way to say everything has to be put inside a class here. So, all programs need to have at least one class which should be same as the name of your program. Otherwise it will cause a problem when you try to run it. This class should always have a main method with which the program execution begins. 
 
