@@ -21,6 +21,15 @@ class Example7
 		System.out.println("Random decimal in range [0,1) : "+d);
 
 		System.out.println("Floor and ceil : "+Math.floor(d)+" "+Math.ceil(d));
+
+		//String split
+		String temp = "hello this is a string.";
+		String tempArray[] = temp.split(" "); //split based on spaces and store in string array
+
+		for(int i=0;i<tempArray.length;i++)
+		{
+			System.out.println(tempArray[i]);			
+		}
 	}
 }
 
@@ -30,6 +39,11 @@ Output :-
 2 raised to 3 is : 8
 Square root of 2 is : 1.4142135623730951
 Square root of 2 is 1.414 
-Random decimal in range [0,1) : 0.6911651883650992
+Random decimal in range [0,1) : 0.016848885100604116
 Floor and ceil : 0.0 1.0
+hello
+this
+is
+a
+string.
 -----------------------------

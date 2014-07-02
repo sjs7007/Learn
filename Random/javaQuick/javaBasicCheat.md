@@ -260,6 +260,10 @@ class Example6
 	+ Math.floor()
 	+ Math.ceil()
 
++ String splitting 
+
+	+ String array[] = <stringName>.split("<splitting separator>")
+
 [Random](Example7.java)
 
 ```Java
@@ -286,6 +290,15 @@ class Example7
 		System.out.println("Random decimal in range [0,1) : "+d);
 
 		System.out.println("Floor and ceil : "+Math.floor(d)+" "+Math.ceil(d));
+
+		//String split
+		String temp = "hello this is a string.";
+		String tempArray[] = temp.split(" "); //split based on spaces and store in string array
+
+		for(int i=0;i<tempArray.length;i++)
+		{
+			System.out.println(tempArray[i]);			
+		}
 	}
 }
 ```
