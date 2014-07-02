@@ -1,4 +1,5 @@
 //http://www.dreamincode.net/forums/topic/57497-stl-stack/
+//http://www.cplusplus.com/reference/stack/stack/
 
 #include<iostream>
 #include<stack>
