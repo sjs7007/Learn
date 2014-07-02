@@ -175,7 +175,9 @@ class Example3
 
 	+ length() : returns length. Methods of a class can be accessed by the syntax <objectName>.method()
 
-				 If the method is static then <className>.method() will also work.[More info here if interested which I haven't read](http://www.intertech.com/Blog/a-static-method-should-be-accessed-in-a-static-way/)
+	 If the method is static then <className>.method() will also work.
+				 
+	[More info here if interested which I haven't read](http://www.intertech.com/Blog/a-static-method-should-be-accessed-in-a-static-way/)
 		
 	+ toUpperCase()
 
