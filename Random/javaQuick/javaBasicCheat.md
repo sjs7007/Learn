@@ -262,7 +262,7 @@ class Example6
 
 + String splitting 
 
-	+ String array[] = <stringName>.split("<splitting separator>")
+	+ String array[] = <stringName>.split("splitting spearator")
 
 [Random](Example7.java)
 
