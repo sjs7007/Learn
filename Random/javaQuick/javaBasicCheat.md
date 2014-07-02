@@ -28,6 +28,10 @@ class Example1
 
 + String args[] : used to store command line arguments of string type
 
++ System.out.println( ) <-- println = print line, equal to adding "\n"
+
++ Else just use, System.out.print()
+
 # 1.Input
 
 1.1 Using Scanner
@@ -44,6 +48,8 @@ class Example1
 
 + ```String temp = ip.next();```
 
++ **Note** : ip is the object name here.
+
 ### 1.1.3 Integer input
 
 + ```int temp = ip.nextInt();```
@@ -55,6 +61,133 @@ class Example1
 
 # 2.Arrays
 ----
+
++ ```int temp[]={3,4,5};```
++ ```int temp[]=new int[size];```
++ Array indexes are 0 based.
++ Array metadata : <arrayName>.length variable has length of array stored, not actual number of variables present. Size declared during initialization. 
++ [Array Code Link](Example2.java)
+
+```
+// Example 2 : Java arrays
+
+class Example2
+{
+	public static void main(String args[])
+	{
+		int temp[]={1,2,3,4,5};
+		for(int i=0;i<temp.length;i++)
+		{
+			System.out.print(i+" ");
+		}
+		System.out.println();
+	}
+}
+```
+
+Now, here I'll just sort of jump ahead and create an Abstract Data Type to show you how to handle array of objects.
+
+[Abstract Data Type Arrays](Example3.java)
+
+```Java
+//Java arrays with Abstract Data Types
+
+class Student
+{
+	String name;
+	int ID;
+
+	Student(String x,int y) // <--1.Constructor. Read in doc.
+	{
+		name = x;
+		ID = y;
+	}
+
+	void display()
+	{
+		System.out.println("Name : "+name+", ID : "+ID);
+	}
+}
+
+class Example3
+{
+	public static void main(String args[])
+	{
+		//Before we go to arrays of ADT, example of using simple ADT
+
+		Student S = new Student("shin",7); 
+		S.display();
+		
+		Student StudentArray[] = new Student[5];
+		for(int i=0;i<StudentArray.length;i++)
+		{
+			StudentArray[i]=new Student("test",i);
+		}
+
+		for(int i=0;i<StudentArray.length;i++)
+		{
+			StudentArray[i].display();
+		}
+		
+
+	}
+}
+```
+
++ Constructor 
+
+	+ Used to create instance of class.
+	+ Is declared without any return type. Not even void.
+	+ [More Info if needed.](http://www.javaworld.com/article/2076204/core-java/understanding-constructors.html)
+
++ **this** keyword
+
+	It refers to the current class inside which you are. You can use it in situations like [this](Example4.java)
+
+	```Java
+	class Student
+	{
+		String name;
+		int ID;
+
+		Student(String name,int ID) // <--1.Constructor. Read in doc.
+		{
+			this.name = name; // <-- Note usage of this keyword.
+			this.ID = ID;
+		}
+
+		void display()
+		{
+			System.out.println("Name : "+name+", ID : "+ID);
+		}
+	}
+
+	```
+
+# 3.Strings
+----
+
++ User Input : Covered above.
+
++ ```String input = "blah";```
++ ```String input = new String("blah");```
++ Methods :-
+
+	+ length() : returns length. Methods of a class can be accessed by the syntax <objectName>.method()
+
+				 If the method is static then <className>.method() will also work.[More info here if interested which I haven't read](http://www.intertech.com/Blog/a-static-method-should-be-accessed-in-a-static-way/)
+		
+	+ toUpperCase()
+
+	+ toLowerCase()
+
+	+ charAt(i) : return character at position i. 
+
+	+ substring(i,j) : return substring [i,j) <-- i.e., jth index not included
+
+	
+	
+
 
 
 
