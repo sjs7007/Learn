@@ -306,7 +306,7 @@ class Example7
 	}
 }
 ```
-# 6.More Things you need to look into
+# 6.More things you need to look into
 
 + Inheritance.
 + Exception Handling.
