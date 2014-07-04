@@ -1,6 +1,5 @@
 // Convert infix expression to postfix expression
 //currently only fot +,-,*,/ without brackets
-//adding brackets
 
 #include<iostream>
 #include<stack> //for stack STL
@@ -24,7 +23,7 @@ int main()
 
 bool isOperand(char c)
 {
-	if((c>='0' && c<='9') ||(c>='a' && c<='z'))
+	if(c>='0' && c<='9')
 	{
 		return true;
 	}
@@ -88,25 +87,12 @@ string infixPostfix(string input)
 		}
 		else if(isOperator(input[i]))
 		{
-			while(!s.empty() && s.top()!='(' && higherPriority(s.top(),input[i]))
+			while(!s.empty() && higherPriority(s.top(),input[i]))
 			{
 				temp = temp + s.top();
 				s.pop();
 			}
 			s.push(input[i]);
-		}
-		else if(input[i]=='(')
-		{
-			s.push('(');
-		}
-		else if(input[i]==')')
-		{
-			while(!s.empty() && s.top()!='(')
-			{
-				temp = temp + s.top();
-				s.pop();
-			}
-			s.pop(); //to remove the open paren
 		}
 	}
 	while(!s.empty())
