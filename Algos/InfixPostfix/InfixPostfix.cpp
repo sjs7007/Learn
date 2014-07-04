@@ -36,7 +36,7 @@ bool isOperand(char c)
 
 bool isOperator(char c)
 {
-	if(c=='+' || c=='-' || c=='*' || c=='/')
+	if(c=='+' || c=='-' || c=='*' || c=='/' || c=='^')
 	{
 		return true;
 	}
@@ -57,6 +57,10 @@ int getPriority(char op)
 					break;
 		case '*':
 		case '/':	priority=2;
+					break;
+
+		case '^':
+					priority=3;
 					break;
 	}
 	return priority;
