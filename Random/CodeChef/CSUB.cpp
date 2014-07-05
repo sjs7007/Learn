@@ -1,7 +1,11 @@
 //http://www.codechef.com/JULY14/problems/CSUB
+// answer only depends on number of 1s in the string
+// pattern 1 3 6 10 15 : triangular number 
+// for n --> n*(n+1)/2
 
 #include<iostream>
 using namespace std;
+#include<stdio.h> //getchar
 
 int main()
 {
@@ -10,24 +14,22 @@ int main()
 	for(int x=0;x<t;x++)
 	{
 		int t2;
-		cin>>t2;
+		scanf("%d\n",&t2);
 
-		string input;
-		cin >>input;
-		int count=0;
+		int oneCount=0;
+		unsigned long long int answer=0; //answer = n(
 
-		for(int i=0;i<input.length();i++)
+		for(int i=0;i<t2;i++)
 		{
-			for(int j=i;j<input.length();j++)
+			char c;
+			if((c=getchar())=='1')
 			{
-				if(input[i]=='1' && input[j]=='1')
-				{
-					count++;
-				}
+				oneCount++;
 			}
 		}
-		cout<<count<<endl;
-	
+		//cout<<oneCount<<"d s"<<endl;
+		answer = oneCount * (oneCount+1) /2 ;
+		cout<<answer<<endl;
 	}
 	//cout<<"Count : "<<count<<endl;
 	//	cout<<input.substr(0,1);
