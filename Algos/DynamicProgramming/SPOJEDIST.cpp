@@ -1,5 +1,5 @@
 //http://www.spoj.com/problems/EDIST/
-//13:51 start - 14:28, seems okay, submit
+//13:51 start - 14:28, seems okay, submit - 14:23, TLE, why? try scanf
 
 
 #include<iostream>
@@ -29,14 +29,24 @@ int main()
 
 int getOptimal(string x,string y,int i,int j)
 {
+	if(i<0 || j<0)
+	{
+		return 0;
+	}
 	if(i==x.length() && j==y.length())
 	{
 		return 0;
 	}
-	else if(i==x.length() ||j==y.length())
+	else if(j==y.length())
 	{
-		//cout<<"here? "<<(abs(j-i)+1)<<endl;
-		return (1+abs(j-i));
+	//	cout<<"here? "<<(abs(j-i)+1)<<endl;
+		return (x.length()-i);
+		//return 100;
+	}
+	else if(i==x.length())
+	{
+		return (abs(y.length()-x.length()));
+		//return 100;
 	}
 	if(DP[i][j]>-1)
 	{
@@ -45,8 +55,9 @@ int getOptimal(string x,string y,int i,int j)
 	}
 	else if(x[i]==y[j])
 	{
-		DP[i][j]=DP[i-1][j-1];
-		return (getOptimal(x,y,i+1,j+1));
+		int temp=getOptimal(x,y,i-1,j-1)+getOptimal(x,y,i+1,j+1);
+		DP[i][j]=temp;
+		return temp;
 	}
 	else
 	{
