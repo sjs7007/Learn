@@ -2,11 +2,11 @@
 // answer only depends on number of 1s in the string
 // pattern 1 3 6 10 15 : triangular number 
 // for n --> n*(n+1)/2
-
+ 
 #include<iostream>
 using namespace std;
 #include<stdio.h> //getchar
-
+ 
 int main()
 {
 	int t;
@@ -15,10 +15,10 @@ int main()
 	{
 		int t2;
 		scanf("%d\n",&t2);
-
-		int oneCount=0;
+		 
+		unsigned long long int oneCount=0;
 		unsigned long long int answer=0; //answer = n(
-
+ 
 		for(int i=0;i<t2;i++)
 		{
 			char c;
@@ -34,3 +34,4 @@ int main()
 	//cout<<"Count : "<<count<<endl;
 	//	cout<<input.substr(0,1);
 }
+ 

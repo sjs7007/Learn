@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
 	int t;
-	cin >>t;
+	/*cin >>t;
 	for(int x=0;x<t;x++)
 	{
 	//	int t2;
@@ -35,8 +35,12 @@ int main()
 		int ans = oneCount* (oneCount+1)/2;
 
 		cout<<count<<" "<<ans<<endl;
-
-	}
+	*/
+		unsigned long long int x=100000,y=100000;
+		cout<<x<<" "<<y<<endl;
+		unsigned long long int z=x*y;
+		cout<<z<<endl;
+	
 	//cout<<"Count : "<<count<<endl;
 	//	cout<<input.substr(0,1);
 }
