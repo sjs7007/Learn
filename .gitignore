@@ -1,1 +1,4 @@
 *.class
+/Java/Swing/CelsiusFah/nbproject/private/
+/Java/Swing/CelsiusConverterGUI/nbproject/private/
+/Java/Swing/CelsiusConverterGUI/build/
