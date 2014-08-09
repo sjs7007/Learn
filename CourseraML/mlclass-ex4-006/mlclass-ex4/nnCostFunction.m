@@ -74,33 +74,26 @@ endfor
 
 % Y(n,:) will give vector for nth example as row vector
 
-
-%for i=1:m
-%    temp1 = -Y(i,:)'*log(sigmoid(X(i,:)));
-%    temp2 = - (1-Y(i,:))' * log(1-sigmoid(X(i,:)));
-%    temp3 = sum(sum(temp1+temp2))
-%    J=J+temp3
-
 % Add ones to the X data matrix
 X = [ones(m, 1) X];
 
 disp(size(Theta1))
 disp(size(X))
-z1=X*Theta1'; %layer1
-z1=sigmoid(z1);
-disp(size(z1)) 
+z2=X*Theta1'; %layer1
+a2=sigmoid(z2);
+disp(size(a2)) 
 
-z1=[ones(size(z1,1),1) z1];
+a2=[ones(size(a2,1),1) a2];
 
-z2=z1*Theta2';
-z2=sigmoid(z2);
-disp(size(z2))
+z3=a2*Theta2';
+a3=sigmoid(z3);
+disp(size(a3))
 
 Jtemp=0;
 
 for i=1:m
-    temp1 = -Y(i,:) .* log(z2(i,:));
-    temp2 = - (1-Y(i,:)) .* log(1-z2(i,:));
+    temp1 = -Y(i,:) .* log(a3(i,:));
+    temp2 = - (1-Y(i,:)) .* log(1-a3(i,:));
     temp3 = sum(sum(temp1+temp2))/m;
     Jtemp = Jtemp + temp3;
 
