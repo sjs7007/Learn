@@ -2,7 +2,9 @@
 // answer only depends on number of 1s in the string
 // pattern 1 3 6 10 15 : triangular number 
 // for n --> n*(n+1)/2
- 
+//ACCEPTED!
+
+
 #include<iostream>
 using namespace std;
 #include<stdio.h> //getchar
