@@ -1,0 +1,14 @@
+[0m[[0minfo[0m] [0mRunning HelloRemote [0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0m  Classpath:[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/DOSProject/scalaRemoteAlvin/HelloRemote/target/scala-2.10/classes[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.3.jar[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/com.typesafe/config/bundles/config-1.2.0.jar[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/jars/akka-remote_2.10-2.3.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/io.netty/netty/bundles/netty-3.8.0.Final.jar[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/com.google.protobuf/protobuf-java/bundles/protobuf-java-2.5.0.jar[0m
+[0m[[0mdebug[0m] [0m	/home/shinchan/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread New I/O worker #4 to terminate.[0m
