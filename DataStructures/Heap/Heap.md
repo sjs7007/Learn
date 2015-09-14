@@ -32,7 +32,7 @@ Max-Heapify(A,i)
 ```C
 l=left(i)=2i // **NOTE**:For array starting from 0 index left=2i+1,right=2i+2 
 r=right(i)=2i+1
-if(l<=A.heap-size and A[l]>A[i]) //if right child is greater than root,set that index to largest else to parent
+if(l<=A.heap-size and A[l]>A[i]) //if left child is greater than parent,set that index to largest else to parent
 	largest=l
 else  largest=i
 if(r<=A.heap-size and A[r]>A[i]) 
