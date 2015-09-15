@@ -4,7 +4,7 @@ class QuickSort
 {
 	public static void main(String[] args) 
 	{
-		int numbers[]={2,8,7,1,3,5,6,4};
+		int numbers[]={2,78,4,8,7,1,3,5,6};
 		System.out.print("Intial Array : ");
 		for(int i : numbers)
 		{
@@ -34,8 +34,9 @@ class QuickSort
 
 	public static int Partition(int numbers[],int p,int r)
 	{
-		int key = numbers[r];
-		int i=p-1;
+		//int key = numbers[r];
+		int key =4;
+        int i=p-1;
 		for(int j=p;j<=r-1;j++)
 		{
 			if(numbers[j]<=key)
@@ -49,7 +50,19 @@ class QuickSort
 		int temp=numbers[i+1];
 		numbers[i+1]=numbers[r];
 		numbers[r]=temp;
-		return i+1;
+
+System.out.print("parititon : ");
+		for(int k : numbers)
+		{
+			System.out.print(k+" ");
+		}	
+		System.out.println();
+
+        
+        System.out.println(" * "+(i+1));
+        return i+1;
+
+
 	}
 }
 

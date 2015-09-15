@@ -12,6 +12,8 @@
 ------
 
 + **Binary Search Tree Property** : If x is a node in a BST and y is in left subtree of x, then y.key<=x.key. Similarly if y is in right subtree of x, then y.key>=x.key
++ Insertion in tree of height h takes order O(h) time. 
+
 
 + Inorder-Tree-Walk(x)   
 
