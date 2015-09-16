@@ -15,4 +15,26 @@
 
 3.Randomized Divide and Conquer
 ------
-+ 
+
+### 3.1 
+
+Partition array recursively till the partition position==rank.
+
+```
+Rand-Select(A,p,q,i):
+    //return ith smallest in A[p..q] 
+	if(p==q), then return A[p]
+	r = randPartition(A,p,q)
+	k = r-p+1 //k=rank(A[r])
+    if(i==k) then return A[r]
+    else if(i<k)
+        return Rand-Select(A,p,r-1,i)
+    else
+        return Rand-Select(A,r+1,q,i-k) //i-k because left k elements discarded
+```
+
+**Analysis:**
+
+Assumption : all elements are distinct. 
+
+Lucky case example : 1:9, ideal 1:1. Similar to quicksort. 
