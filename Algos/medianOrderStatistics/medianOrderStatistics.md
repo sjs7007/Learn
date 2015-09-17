@@ -16,7 +16,7 @@
 3.Randomized Divide and Conquer
 ------
 
-### 3.1 
+### 3.1 Rand Select 
 
 Partition array recursively till the partition position==rank.
 
@@ -37,4 +37,15 @@ Rand-Select(A,p,q,i):
 
 Assumption : all elements are distinct. 
 
-Lucky case example : 1:9, ideal 1:1. Similar to quicksort. 
+Lucky case example : 1:9, ideal 1:1 split. 
+T(n)<=T(9n/10)+Theta(1) => T(n)=Theta(n) (Use Master Method)
+
+Unlucky Case : T(n)=T(n-1)+Theta(n)=Theta(n^2)
+
+**Formal Analysis: **
++ 21m 33s or look at [slides](lec6.pdf). Expected time calculation using indicator random variable. 
++ Similar to quicksort except only 1 branch is taken here while in quicksort both branches are recursively called. 
++ Expected : Theta(n), worst case: Theta(n^2)
+
+### 3.2 Worst Case Linear Time Order Statistics
+
