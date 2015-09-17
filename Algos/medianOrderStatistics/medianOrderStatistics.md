@@ -48,4 +48,4 @@ Unlucky Case : T(n)=T(n-1)+Theta(n)=Theta(n^2)
 + Expected : Theta(n), worst case: Theta(n^2)
 
 ### 3.2 Worst Case Linear Time Order Statistics
-
++ Worst case running time : O(n). But the constant factor involved is large and hence this algorithm is practically not used. 
