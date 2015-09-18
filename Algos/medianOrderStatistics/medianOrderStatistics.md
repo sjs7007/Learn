@@ -48,4 +48,7 @@ Unlucky Case : T(n)=T(n-1)+Theta(n)=Theta(n^2)
 + Expected : Theta(n), worst case: Theta(n^2)
 
 ### 3.2 Worst Case Linear Time Order Statistics
++ Split input into floor(n/5) groups of 5 and 1 group of n%5 elements left. Find median of each group using insertion sort. 
++ Find median of ceil(n/5) medians using deterministic select.
++ Use the median as pivot. Check slides/nb for analysis. Slides have floor analysis, textbook ceil. Textbook simpler. 
 + Worst case running time : O(n). But the constant factor involved is large and hence this algorithm is practically not used. 
