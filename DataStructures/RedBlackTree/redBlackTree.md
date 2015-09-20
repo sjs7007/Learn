@@ -64,4 +64,8 @@ PS : **Simple paths** are paths which dont repeat any vertices.
 + Color changes
 + restructuring of links via rotations
 
+### 3.5 : Rotations
+Check notes/slides.
+
+### 3.6 : Insertion. 
 

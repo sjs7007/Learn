@@ -39,6 +39,9 @@ In that case the only possible elements with value <=x will lie above x and be a
 ![Predecessor](pred.jpg)
 
 #### 2.4 Successor
+
++ Video : https://www.youtube.com/watch?v=5cPbNCrdotA
+    
 + **Case 1 :** Node x has right subtree.
 By BST property, right subtree will only have elments >=x. The min of this subtree is the one closes to x. Lets call it right.
 
