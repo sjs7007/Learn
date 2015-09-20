@@ -15,13 +15,13 @@
 + Insertion in tree of height h takes order O(h) time. 
 + h can range from lgn to n-1. 
 
-## 2.1 Minimum 
+#### 2.1 Minimum 
 + Keep following left child pointers till the next left child pointer is null. Current node is min.
 
-## 2.2 Max
+#### 2.2 Max
 + Similar as above, keep following right child....
 
-## 2.3 Predecessor 
+#### 2.3 Predecessor 
 + **Case 1** : Node x has left subtree. 
 By BST property, left subtree will only have elements <=x. The max of this subtree is the one closest to x. Lets call it left.
 
@@ -38,7 +38,7 @@ In that case the only possible elements with value <=x will lie above x and be a
 
 ![Predecessor](pred.jpg)
 
-## 2.4 Successor
+#### 2.4 Successor
 + **Case 1 :** Node x has right subtree.
 By BST property, right subtree will only have elments >=x. The min of this subtree is the one closes to x. Lets call it right.
 
@@ -52,6 +52,26 @@ Therefore, min of right subtree will be predecessor in this case.
 
 + **Case 2 :** Node x has no right subtree.
 In that case the only possible elements with value >=x will lie above x and be an ancestor of x. x has to be a left descendant of successor to satisfy x<= successor or successor >=x. The lowest node in the tree which has x has left descendant will be the successor because if we go higher we miss the successor. 
+
+#### 2.5 Insertion
+Perform binary search to find where node x would have been in the tree if was present. If null location, insert node x here. Else if location already has node with same value, insert x has child if it has no childrens, else perform operation recursively on left subtree or right subtree. 
+
+#### 2.6 Deletion
+
+https://www.youtube.com/watch?v=gcULXE7ViZw : very good explanation
+
+**Case 1 :** Node x has no child. 
+Just delete node x from tree.
+
+**Case 2 :** Node x has 1 child.
+Replace node x with its child.
+
+**Case 3 :** Node x has 2 children. 
+Remove x and copy minimum of right subtree in position of x. Then delete minimum node from right subtree. Since it is the minimum, it wont have a left child. Hence reduced to case 2. Also, since min from right subtree, BST property satisfied. 
+OR 
+
+Remove x and copy maximum of left subtree in position of x. Then delete max node from left subtree. Since it is minimum, it wont have a right child. Hence reduced to case 2. Also, since max from left subtree, BST property satisfied.
+
 3.Psuedo code
 ------
 
