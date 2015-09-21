@@ -19,6 +19,11 @@
 
 	+ [Handwritten Notes](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20_orig.pdf)
 
++ Lecture 1 from CLRS Author 
+
+    + [LCS problem](http://ocw.mit.edu/courses/electrical-engineering-a-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-15-dynamic-programming-longest-common-subsequence/)
+    + [Slides](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-15-dynamic-programming-longest-common-subsequence/lec15.pdf)
+    + [Other links](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-15-dynamic-programming-longest-common-subsequence/)
 + Cormen, pg 359
 
 2.General Structure
@@ -264,3 +269,67 @@ So the LCS problem has optimal substructure property as the main problem can be 
 + NOTE : free call case being given as >0 instead of correct >=0 was causing TLE.
 
 + C++ Code : [LISA](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LISASubmit.cpp)
+
+4.Notes from CLRS - Lowest Common Subsequence
+--------
+
+Dynamic Programming
+-----
++ Design technique like Divide and Conquer. 
+
+1.LCS Problem
+-----
++ Given two seq x[1..m] and y[1..n], find a longest seq common to both. 
++ Skipping characters allowed, order should be maintained. 
++ Example X : [a,b,c,b,d,a,b] and Y : [b,d,c,a,b,a] have bdab,bcab etc has common. 
++ Common Subsequence = LCS(X,Y). Functional notation, but not function ? 
+
+### 1.1 Brute Force Algorithm
+------
++ Check every subsequence of X[1..m] to see if it is a subsequence of Y[1..n] as well. 
++ No. of subsequences of x = 2^m. Select or reject each element from X. Each bit vector of length m can correspond to a subseq.
++ Complexity = O(n*2^m). Exponential time. 
+
+### 1.2 Simplification.
+-----
++ Consider first length of LCS(X,Y) and later extend the algo to find the LCS. 
+
+### 1.3 Normal Algo with memoization.
+-------
++ Strategy : Consider prefixes of X and Y. 
++ Define C[i,j]=|LCS(x[1..i],y[1..j])|. Then C[m,n]=|LCS(x,y)|
++ **Theorem** : 
+    C[i,j] = c[i-1,j-1]+1 if x[i]==y[j] 
+           = max{c[i,j-1],c[i-1,j]} else
++ **Proof:**
+
+**Case 1:** x[i]==y[j]
+Let Z[1..k]= LCS(X[1..i],Y[1...j]) where C[i,j]=k. 
+Then, Z[k]=X[i]=Y[j] else Z could be extended. Thus Z[1,..,k-1] is common sequence of x[1..i-1] and y[1..j-1].
+
+**Claim:** Z[1,..,k-1] is LCS of X[1,..,i-1] and Y[1,..,j-1]. 
+
+Suppose W is a longer CS, that is 
+|W| > k-1
+Cut and paste argument : W.append(Z[k]) is a CS of X[1..i] and Y[1...j] with length >k. Contradiction. 
+
+Thus, C[i-1,j-1]=k-1. Hence, C[i][j]=C[i-1,j-1]+1 in this case. 
+
+Other cases can be done similarly.
+
+Apply overlapping subproblems here. LCS consists of m*n distinct subproblems. (i goes from 1 to m and j goes from 1 to n. So m*n.)
+
+**DP Change:**
++ Use a memo table to store entries for c[i][j]. If c[i][j]!=null calculate and store else just return c[i][j] value.
+
+Running Time : Theta(m*n) because only m*n calls are recursive and rest are memoized calls. 
+Space Complexity : Theta(m*n).
+
+### 1.4 DP using bottom up
++ Time : Theta(m*n)
++ Space : Theta(m*n) or min(m,n)+theta(1)
+
+### 1.5 Dynamic Programming Hallmarks
++ **Optimal Substructure Property:** An optimal solution to a problem(instance) contains optimal solution to subproblems. 
+Example : In the context of LCS,  if z=LCS(X,Y) then any prefix of z is a LCS of a prefix of x and a prefix of y. 
++ **Overlapping Subproblems:**  A recursive solution contains a small number of distinct subproblems repeated many times. 
