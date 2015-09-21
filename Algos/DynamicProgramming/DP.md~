@@ -322,7 +322,7 @@ Apply overlapping subproblems here. LCS consists of mn distinct subproblems. (i 
 **DP Change:**
 + Use a memo table to store entries for c[i][j]. If c[i][j]!=null calculate and store else just return c[i][j] value.
 
-Running Time : Theta(mn) because only m*n calls are recursive and rest are memoized calls. 
+Running Time : Theta(mn) because only mn calls are recursive and rest are memoized calls. 
 Space Complexity : Theta(mn).
 
 ### 1.4 DP using bottom up
