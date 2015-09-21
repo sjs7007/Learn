@@ -164,9 +164,9 @@
 
 + Solution
 
-	+ maxProd(n)=for k in range[1,n-1], max of [k*(n-k),k*maxProd(n-k),maxProd(k)*(n-k),maxProd(k)*maxProd(n-k)]
+	+ maxProd(n)=for k in range[1,n-1], max of [k(n-k),k maxProd(n-k),maxProd(k) (n-k),maxProd(k) maxProd(n-k)]
 
-	+ in geeks for geeks maxProd(k)*maxProd(n-k) is not considered. **WHY?** Figure out.
+	+ in geeks for geeks maxProd(k) * maxProd(n-k) is not considered. **WHY?** Figure out.
 
 + C++ Code : [Max Product Cutting](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/MaxProdCutting.cpp)
 
@@ -317,17 +317,17 @@ Thus, C[i-1,j-1]=k-1. Hence, C[i][j]=C[i-1,j-1]+1 in this case.
 
 Other cases can be done similarly.
 
-Apply overlapping subproblems here. LCS consists of m*n distinct subproblems. (i goes from 1 to m and j goes from 1 to n. So m*n.)
+Apply overlapping subproblems here. LCS consists of mn distinct subproblems. (i goes from 1 to m and j goes from 1 to n. So m*n.)
 
 **DP Change:**
 + Use a memo table to store entries for c[i][j]. If c[i][j]!=null calculate and store else just return c[i][j] value.
 
-Running Time : Theta(m*n) because only m*n calls are recursive and rest are memoized calls. 
-Space Complexity : Theta(m*n).
+Running Time : Theta(mn) because only mn calls are recursive and rest are memoized calls. 
+Space Complexity : Theta(mn).
 
 ### 1.4 DP using bottom up
-+ Time : Theta(m*n)
-+ Space : Theta(m*n) or min(m,n)+theta(1)
++ Time : Theta(mn)
++ Space : Theta(mn) or min(m,n)+theta(1)
 
 ### 1.5 Dynamic Programming Hallmarks
 + **Optimal Substructure Property:** An optimal solution to a problem(instance) contains optimal solution to subproblems. 
