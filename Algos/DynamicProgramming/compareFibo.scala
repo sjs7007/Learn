@@ -3,7 +3,7 @@
 
 object compareFibo {
   def main(args: Array[String]) {
-    val n=40
+    val n=50
     print("Recursive Fibo Start for n = "+n+"\n")
     var start = System.currentTimeMillis
     println(recursiveFibo(n))
