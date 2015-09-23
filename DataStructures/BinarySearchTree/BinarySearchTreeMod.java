@@ -31,11 +31,13 @@ class BST
 			y = x;
 
 
-        //    System.out.println("*"+ (z - x.key)+" "+(z-newSucc.key)+" "+x.key+" "+z);
+//          System.out.println(" z - x.key , z - newSucc.key x.key z "+ (z - x.key)+" "+(z-newSucc.key)+" "+x.key+" "+z);
 
-            if((z - x.key)<=( z - newSucc.key) && x.key >=z)
+            System.out.println(x.key+" "+newSucc.key+" "+z);
+            if(  (x.key-z)<=(newSucc.key-z) && x.key >=z)
+         //   if(x.key>=newSuc.)
             {
-                System.out.println(x.key+" replacing "+z);
+           //     System.out.println(x.key+" replacing "+newSucc.key);
                 newSucc = x;
             }
             if(x.key<=z && x.key>=newPred.key)
@@ -237,7 +239,7 @@ class BinarySearchTreeMod
         */
         //int A[]={1,13,43,43,13,3,144,20,40,30,50,70};
         
-       int A[]={1,13,43};
+       int A[]={13,5,4,3,2,1,8,7,6};
 
         for(int i=0;i<A.length;i++)
         {
@@ -261,10 +263,14 @@ class BinarySearchTreeMod
         */
 		System.out.println("Min. Value : "+B.iterativeMin(B.root).key);
 
-        for(int i=0;i<A.length;i++)
+        for(int i=1;i<A.length;i++)
         {
             k=A[i];
-		    System.out.println("Successor of "+k+" : "+B.recSearch(B.root,k).succ.key);
+            Node temp = B.recSearch(B.root,k).succ;
+            if(temp!=null)
+		        System.out.println("Successor of "+k+" : "+temp.key);
+            else
+                System.out.println("Key "+k+" has no sucessor.");
          //   System.out.println("Predecessor of "+k+" : "+B.predecessor(B.recSearch(B.root,k)).key);
         }
                 
