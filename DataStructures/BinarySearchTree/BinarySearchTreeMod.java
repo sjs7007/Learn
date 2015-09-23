@@ -23,8 +23,10 @@ class BST
 	{
 		Node y = null;
 		Node x = root;
-        Node newPred = x;
+        Node newPred = new Node(-100);
         Node newSucc = x;
+
+        System.out.println("=====");
 
 		while(x!=null)
 		{
@@ -34,14 +36,16 @@ class BST
 //          System.out.println(" z - x.key , z - newSucc.key x.key z "+ (z - x.key)+" "+(z-newSucc.key)+" "+x.key+" "+z);
 
             System.out.println(x.key+" "+newSucc.key+" "+z);
-            if(  (x.key-z)<=(newSucc.key-z) && x.key >=z)
-         //   if(x.key>=newSuc.)
+            //if(  (x.key-z)<=(newSucc.key-z) && x.key >=z)
+            if(  (x.key)<=(newSucc.key) && x.key >=z)
             {
-           //     System.out.println(x.key+" replacing "+newSucc.key);
+               System.out.println(x.key+" replacing "+newSucc.key);
                 newSucc = x;
             }
-            if(x.key<=z && x.key>=newPred.key)
+            if((x.key >= newPred.key) && x.key<=z)
             {
+           //     System.out.println(x.key+" replacing "+newPred.key);
+                System.out.println(x.key+ " is pred of "+z);
                 newPred=x;
             }
 			if(z<x.key)
@@ -72,9 +76,18 @@ class BST
 
         if(newPred!=null)
         {
-          newPred.succ = x;
+            newPred.succ = x;
+            
+            if(x!=null)
+                System.out.println("ONE : Succ of"+newPred.key+" is "+newPred.succ.key);
+            else
+                System.out.println("became null");
         }
         newNode.succ = newSucc;
+        if(newNode.succ!=null)
+            System.out.println("TWO : succ of "+newNode.key + " is "+newNode.succ.key);
+        else
+            System.out.println("became null");
 
     //    if(newSucc!=null)
       //      System.out.println(newSucc.key);
@@ -239,7 +252,9 @@ class BinarySearchTreeMod
         */
         //int A[]={1,13,43,43,13,3,144,20,40,30,50,70};
         
-       int A[]={13,5,4,3,2,1,8,7,6,0,10,12,11};
+       int A[]={13,5,4,3,2,1,1,1};//,7,6,0,10,12,11};
+
+//        int A[]={1,2,3,4,5,4,3,2,1};
 
         for(int i=0;i<A.length;i++)
         {
@@ -268,7 +283,7 @@ class BinarySearchTreeMod
             k=A[i];
             Node temp = B.recSearch(B.root,k).succ;
             if(temp!=null)
-		        System.out.println("Successor of "+k+" : "+temp.key);
+		        System.out.println("THREE : Successor of "+k+" : "+temp.key);
             else
                 System.out.println("Key "+k+" has no sucessor.");
          //   System.out.println("Predecessor of "+k+" : "+B.predecessor(B.recSearch(B.root,k)).key);
