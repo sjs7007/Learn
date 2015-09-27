@@ -270,7 +270,39 @@ So the LCS problem has optimal substructure property as the main problem can be 
 
 + C++ Code : [LISA](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LISASubmit.cpp)
 
-### 3.13 Coin Change Problem : [Video](dp_2.swf)
+### 3.13 Coin Change Problem : 
++ Making Change. You are given n types of coin denominations of values v(1) < v(2) < ... < v(n) (all integers). Assume v(1) = 1, so you can always make change for any amount of money C. Give an algorithm which makes change for an amount of money C with as few coins as possible. [on problem set 4]
++ [Solution Video](dp_2.swf)
++ Select a coin with value v_i, coin count increment by 1 and then solve subproblem for C-selected coin vale add add to coin count.
++ DP(i)=1+min(DP(C-v_i)).
++ Running Time : C subproblems, each requiring minimization over n different terms. Hence O(nC).
+
+### 3.14 Maximum Value Contiguous Subsequence. 
++ Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized.
++ [Solution Video](dp_1.swf)
++ Let DP(i) be the subsequence which ends at i and includes element i. 
+```
+DP(i) = 0 if i==0
+      = max(DP(i-1)+A[i],A[i]) else
+```
++ The solution implies that for each ith position either you select the ith element and add it list or start a new window here. 
++ Example <10,3,4,-18,100>, DP(3) will be 10+3+4 = 17. For DP(4) either we can include A[4] with solution of DP(3) or start a new list here. First one will result in -1 vs other in -18, hence we pick 1st option and DP(4)=-1 and includes <10,3,4,-18>. For DP(5) we can make it <10,3,4,-18> or <100>. Since later has a higher sum, we select that. 
++ Running time : n subproblems, each takes O(1) time. Hence in O(n) time.
++ Ans will be in max of all DP(i)'s. 
+
+### 3.15 Longest Increasing Subsequence 
++  Given a sequence of n real numbers A(1) ... A(n), determine a subsequence (not necessarily contiguous) of maximum length in which the values in the subsequence form a strictly increasing sequence. [on problem set 4]
++  [Solution Video](dp_2.swf)
++  Let DP(i) be the longest increasing subsequence which ends at i and includes element i.
++  For ith element you have 2 choices then : Either extend list if possible or start new list here.
++  DP(j)=1+max(DP(i)), i<j,A[i]<A[j]. If no such element found, only jth element is added. 
++  Running time : n subproblems, O(n) subproblems, each takes O(n) time. So O(n^2) time.
++  Ans will be in max of all DP(j)'s.
+
+### 3.16 Optimal Strategy of a game 
+```
+DP(i) = 
+```
 
 4.Notes from CLRS - Lowest Common Subsequence
 --------
