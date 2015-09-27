@@ -319,11 +319,13 @@ j-i >=2
 + Let DP(i,j) = ans for substring i,j.
 + Let F(i,j) = number of ways to parenthesize such that always false.
 ```
-DP(i,j) = DP(i,k-1) * DP(k+1,j) if A[k]=and
+DP(i,j)= sum of all such k betwen (i,j) = DP(i,k-1) * DP(k+1,j) if A[k]=and
 	= DP(i,k-1) * DP(k+1,j) + DP(i,k-1) * F(k+1,j) + F(i,k-1) * DP(k+1,j) if A[k]=or
 	= DP(i,k-1) * F(k+1,j) + F(i,k-1) * DP(k+1,j) if A[k]=or 
 ```
-+ Running time : O(n^2) subproblems... 
++ Running time : O(n^2) subproblems... n things to sum up?
++ My approach... close but wrong.
++ ![paper solution](CountBoolean.jpg)
 4.Notes from CLRS - Lowest Common Subsequence
 --------
 
