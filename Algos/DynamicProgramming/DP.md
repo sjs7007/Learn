@@ -270,6 +270,8 @@ So the LCS problem has optimal substructure property as the main problem can be 
 
 + C++ Code : [LISA](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LISASubmit.cpp)
 
+### 3.13 Coin Change Problem : [Video](dp_2.swf)
+
 4.Notes from CLRS - Lowest Common Subsequence
 --------
 
