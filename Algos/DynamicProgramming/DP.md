@@ -156,6 +156,11 @@
 
 	+ Fill later
 
++ Paper solution :
+
+![Mixtures1](Mixtures1.jpg)
+![Mixtures2](Mixtures2.jpg)
+    
 + C++ Code : [Mixtures Memoized](https://github.com/sjs7007/Learn/tree/master/Algos/DynamicProgramming/MixturesDP.cpp)
 
 ### 3.6 Max Product Cutting : GeeksForGeeks
