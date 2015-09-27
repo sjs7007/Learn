@@ -300,10 +300,30 @@ DP(i) = 0 if i==0
 +  Ans will be in max of all DP(j)'s.
 
 ### 3.16 Optimal Strategy of a game 
++ Consider a row of n coins of values v(1) ... v(n), where n is even. We play a game against an opponent by alternating turns. In each turn, a player selects either the first or last coin from the row, removes it from the row permanently, and receives the value of the coin. Determine the maximum possible amount of money we can definitely win if we move first.
++ [Solution Video](dp_10.swf)
++ Let DP(i,j)=solution of subproblem for array of size A(i,j).
++ Opponent is as smart as us so we assume he will use the same strategy as us. 
 ```
-DP(i) = 
-```
+DP(i,j)=max(A[i]+DP(min(DP(i+2,j),DP(i+1,j-1))),A[j]+DP(min(DP(i+1,j-1),DP(i,j-2)))
 
+j-i >=2
+```
++ Running Time : O(n^2) subproblem.... why? O(n^2) substrings. O(1) choice. O(n^2) hence. 
++ ![paper solution](OptimalStrategy.jpg)
+
+### 3.17 Counting Boolean Parenthesizations 
++ You are given a boolean expression consisting of a string of the symbols 'true', 'false', 'and', 'or', and 'xor'. Count the number of ways to parenthesize the expression such that it will evaluate to true. For example, there are 2 ways to parenthesize 'true and false xor true' such that it evaluates to true.
++ [Solution Video](dp_9.swf)
++ Let the input be in an array of A[1..n]
++ Let DP(i,j) = ans for substring i,j.
++ Let F(i,j) = number of ways to parenthesize such that always false.
+```
+DP(i,j) = DP(i,k-1) * DP(k+1,j) if A[k]=and
+	= DP(i,k-1) * DP(k+1,j) + DP(i,k-1) * F(k+1,j) + F(i,k-1) * DP(k+1,j) if A[k]=or
+	= DP(i,k-1) * F(k+1,j) + F(i,k-1) * DP(k+1,j) if A[k]=or 
+```
++ Running time : O(n^2) subproblems... 
 4.Notes from CLRS - Lowest Common Subsequence
 --------
 
