@@ -18,10 +18,10 @@ class acode
         System.out.println(DP(a));
     }
 
-    public static int DP(int x[])
+    public static long DP(int x[])
     {
-        int mul=1;
-        int count=0;
+        //int mul=1;
+        long count=0;
 
         if(x.length>=1)
         {
