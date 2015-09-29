@@ -9,13 +9,20 @@ class acode
         //int a[]={2,5,1,1,4};
         //int a[]={1,1,1,1,1,1,1,1,1,1};
         //int a[]={3,3,3,3,3,3,3,3,3,3};
+        
         Scanner ip = new Scanner(System.in);
-        String input = ip.next();
-        int a[]=new int[input.length()];
-        for(int i=0;i<a.length;i++)
+        
+        while(true)
+        {
+            String input = ip.next();
+            if(input.equals("0"))
+                break;
+            int a[]=new int[input.length()];
+            for(int i=0;i<a.length;i++)
             a[i]=Character.getNumericValue(input.charAt(i));
-        int n = a.length;
-        System.out.println(DP(a));
+            int n = a.length;
+            System.out.println(DP(a));
+        }
     }
 
     public static long DP(int x[])
