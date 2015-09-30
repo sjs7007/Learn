@@ -217,6 +217,16 @@ So the LCS problem has optimal substructure property as the main problem can be 
 
 + C++ Code : [LCS](https://github.com/sjs7007/Learn/blob/master/Algos/DynamicProgramming/LCSDP.cpp)
 
+OR
+X=[x1,x2,...,xm]
+Y=[y1,y2,...,yn]
+Let DP(i,j)=Length of LCS of subsequence x1,x2,..,xi and y1,y2,..,yj
+
+```
+DP(i,j)= 0 if i==0 or j==0
+DP(i,j)=DP(i-1,j-1)+1 if xi=yj and i,j>0
+DP(i,j)=max(DP(i-1,j),DP(i,j-1)) if i,j>0 and xi!=yj
+```
 ### 3.9 Longest Increasing Subsequence
 
 + [Link](http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/)
