@@ -269,7 +269,7 @@ So the LCS problem has optimal substructure property as the main problem can be 
 
 + Solution
 
-	+ DP[i,j]=max for all k=i+1 to j-1, where j=last index in array is [DP[i,k-1] <kth operation> DP[j+1,k]]
+	+ DP[i,j]=max for all k=i+1 to j-1, where j=last index in array is [DP[i,k-1] kth operation DP[k+1,j]]
 
 + NOTE : free call case being given as >0 instead of correct >=0 was causing TLE.
 
