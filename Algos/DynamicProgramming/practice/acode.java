@@ -39,7 +39,7 @@ class acode
                 y[i-1]=x[i];
             count = count + DP(y);
         }
-        if(x.length>=2 && ((x[0]==1 && x[1]<=9) || (x[1]==2 && x[1]<=6)))
+        if(x.length>=2 && ((x[0]==1 && x[1]<=9) || (x[0]==2 && x[1]<=6)))
         {
             int z[]=new int[x.length-2];
             for(int i=2;i<x.length;i++)
