@@ -37,7 +37,7 @@ class acode
     public static long DP(int x[],int start)
     {
         //int mul=1;
-        if(DP[start]>0)
+        if(start<DP.length && DP[start]>0)
             return DP[start];
         if(x.length==0)
             return 1;
