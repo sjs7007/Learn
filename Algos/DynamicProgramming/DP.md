@@ -348,8 +348,56 @@ DP(Node N)
 	{
 		//either you can take node at current level and grandchildren or 
 		//node at children level
-		return(max(summation of DP(Ci) where i is ith child of N for all i,N.convRating+summation of DP(i) where i is ith grandchild of N for all i)))
+		return(max(summation of DP(Ci) where i is ith child of N for all i,
+		N.convRating+summation of DP(i) where i is ith grandchild of N for all i)))
 	}
+}
+```
+
+### 3.19 Longest Palindromic Substring 
++ [Link](http://articles.leetcode.com/2011/11/longest-palindromic-substring-part-i.html)
+```
+Let table[i][j]=true if substring(i,j) is a palindrome. Then,
+
+Base Case :
+//strings of length 1
+table[i][i]=true
+
+//strings of length 2
+table[i][i+1=true if char[i]==char[i+1]
+
+table[i][j]=true if char[i]==char[j] and table[i+1][j-1]==true.
+```
+
++ code from leet code : 
+
+```
+string longestPalindromeDP(string s) {
+  int n = s.length();
+  int longestBegin = 0;
+  int maxLen = 1;
+  bool table[1000][1000] = {false};
+  for (int i = 0; i < n; i++) {
+    table[i][i] = true;
+  }
+  for (int i = 0; i < n-1; i++) {
+    if (s[i] == s[i+1]) {
+      table[i][i+1] = true;
+      longestBegin = i;
+      maxLen = 2;
+    }
+  }
+  for (int len = 3; len <= n; len++) {
+    for (int i = 0; i < n-len+1; i++) {
+      int j = i+len-1;
+      if (s[i] == s[j] && table[i+1][j-1]) {
+        table[i][j] = true;
+        longestBegin = i;
+        maxLen = len;
+      }
+    }
+  }
+  return s.substr(longestBegin, maxLen);
 }
 ```
 
