@@ -333,6 +333,27 @@ DP(i,j)= sum of all such k betwen (i,j) = DP(i,k-1) * DP(k+1,j) if A[k]=and
 + Running time : O(n^2) subproblems... n things to sum up?
 + My approach... close but wrong.
 + ![paper solution](CountBoolean.jpg)
++ 
+
+### 3.18 Company Party : CLRS
++ [Link](http://mypathtothe4.blogspot.com/2013/03/dynamic-programming-company-party.html)
+```
+DP(Node N)
+{
+	if(N has no children) //base case
+	{  
+		return(max(0,N.convRating);
+	}
+	else
+	{
+		//either you can take node at current level and grandchildren or 
+		//node at children level
+		return(max(summation of DP(Ci) where i is ith child of N for all i,N.convRating+summation of DP(i) where i is ith grandchild of N for all i)))
+	}
+}
+```
+
+
 4.Notes from CLRS - Lowest Common Subsequence
 --------
 
