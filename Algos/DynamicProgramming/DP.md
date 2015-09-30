@@ -401,6 +401,20 @@ string longestPalindromeDP(string s) {
 }
 ```
 
+### 3.20 Palindromic Subsequence 
++ [Link to geeks for geeks](http://www.geeksforgeeks.org/dynamic-programming-set-12-longest-palindromic-subsequence/)
++ Let DP(i,j) return the length of longest possible palindromic subsequnce for substring(i,j)
+```
+Base Case : 
+DP(i,i)=1
+DP(i,i+1)=1 if char[i]==char[i+1]
+
+if(char[i]==char[j])
+	DP(i,j)=2+DP(i+1,j-1)
+else 
+	DP(i,j)=max(DP(i+1,j),DP(i,j-1))
+```
+
 
 4.Notes from CLRS - Lowest Common Subsequence
 --------
