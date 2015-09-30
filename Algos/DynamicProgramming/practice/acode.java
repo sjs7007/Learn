@@ -19,8 +19,9 @@ class acode
         {
             
             for(int i=0;i<DP.length;i++)
-            DP[i]=-1;
-
+            {
+                DP[i]=-1;
+            }
             
             String input = ip.next();
             if(input.equals("0"))
