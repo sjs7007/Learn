@@ -37,10 +37,13 @@ class acode
     public static long DP(int x[],int start)
     {
         //int mul=1;
-        if(start<DP.length && DP[start]>0)
-            return DP[start];
         if(x.length==0)
             return 1;
+        
+        if(start<DP.length && DP[start]>0)
+            return DP[start];
+
+        
         long count=0;
 
         if(x.length>=1 && x[0]>=1)
