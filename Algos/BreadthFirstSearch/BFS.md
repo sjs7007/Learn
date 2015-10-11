@@ -11,13 +11,27 @@
 
 + Cormen, pg 590
 	
-2.Psuedo Code
+3.Notes
+-----
+
+### 3.1 Representations
++ Adjacency List : prefer if sparse
+    + Storage space : theta(V+E)
++ Adjacency Matrix : prefer if dense
+
+### 3.2 Graph Types
++ Directed
++ Undirected 
+
+Rest check typed notes.
+
+4.Psuedo Code
 --------
 
-### 2.1 Adjacency List  
+### 4.1 Adjacency List  
 To represent the graph there is an array of vertices present in the graph and each of it contains a link to list of vertices that are connected to the given vertex.
 
-### 2.2 Terms Used
+### 4.2 Terms Used
 
 + p, parent(predecessor of vertex)
 + color : white for undiscovered nodes, grey and black for discovered. (grey=children not discovered,else black)
@@ -48,7 +62,7 @@ while(Q is not empty)
 	u.color = black
 ```
 
-3.Java Code
+5.Java Code
 -----
 
 [Link](https://github.com/sjs7007/Learn/blob/master/Algos/BreadthFirstSearch/BFS.java)   
