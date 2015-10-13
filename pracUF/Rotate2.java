@@ -1,24 +1,33 @@
-public class Rotate2 {
-	public void rotate(ArrayList<ArrayList<Integer>> a) {
+//correct but TLE
+
+public class Solution {
+		public void rotate(ArrayList<ArrayList<Integer>> a) {
 	    int n = a.get(0).size();
-	    while(n>1) {
+	    /*while(n>1) {
 	        n--;
-	        a = rotateOnce(a);
+	        a = rotateOnce(a,i);
+	    }*/
+	    for(int i=1;i<=n/2;i++) //no of layers
+	    {
+	    	//no of rotation for ith layer n-1,n-3,n-5
+	    	for(int j=n-(2*i)+1;j>0;j--)
+	    	{
+	    		a = rotateOnce(a,i-1);
+	    	}
 	    }
 	    //return a;
 	}
 
-	public static void main(String )
-	
-	public ArrayList<ArrayList<Integer>>  rotateOnce(ArrayList<ArrayList<Integer>> x) {
-	   int r=0,c=0,n=x.get(0).size(),temp;
+
+	public ArrayList<ArrayList<Integer>>  rotateOnce(ArrayList<ArrayList<Integer>> x,int i) {
+	   int r=i,c=i,n=x.get(0).size(),temp;
 	   //go right
 	   //if(r==0)
-	   int rightMax = n-1,bottomMax=n-1,topMin=0,leftMin=0;
-	   int i=0;
-	   while(leftMin<rightMax) {
+	   int rightMax = n-1-i,bottomMax=n-1-i,topMin=i,leftMin=i;
+	  // int i=0;
+	   //while(leftMin<rightMax) {
 	        temp = x.get(i).get(i);
-	        i++;
+	       // i++;
 		   	  while(c<rightMax) {
 		     //  temp=x.get(r).get(c);
 		       c++;
@@ -59,16 +68,15 @@ public class Rotate2 {
 		       temp=sTemp;
 	 	  }
 	 	  //r = topMin-1
-	 	  r=i;
-	 	  c=i;
-	 	  rightMax--;
+	 //	  r=i;
+	 //	  c=i;
+	 //	  rightMax--;
 	 	//  topMax++;
-	 	  bottomMax--;
-	 	  topMin++;
-	 	  leftMin++;
-	   }
+	 	//  bottomMax--;
+	 	//  topMin++;
+	 	//  leftMin++;
+	   //}
 	   return x;
 	}
-	
 	
 }
