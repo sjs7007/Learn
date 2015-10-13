@@ -257,16 +257,6 @@ class Solution {
             int rightMax=n,bottomMax=n,leftMin=1,topMin=2;
             int x[][]=new int[n+1][n+1];
 
- for(int i=1;i<=n;i++)
-        {
-          //  temp = new ArrayList<Integer>();
-            for(int j=1;j<=n;j++)
-            {
-                System.out.print(x[i][j]+" ");
-              //  temp.add(x[i][j]);
-            }
-            System.out.println();
-        }
 
         while(count<=n*n)
         {
@@ -287,16 +277,6 @@ class Solution {
             }
            
 
- for(int i=1;i<=n;i++)
-        {
-         //   temp = new ArrayList<Integer>();
-            for(int j=1;j<=n;j++)
-            {
-                System.out.print(x[i][j]+" ");
-                //temp.add(x[i][j]);
-            }
-            System.out.println();
-        }
 
             while(count<=n*n)
             {
@@ -312,17 +292,7 @@ class Solution {
 
                 count++;
             }
-         
- for(int i=1;i<=n;i++)
-        {
-          //  temp = new ArrayList<Integer>();
-            for(int j=1;j<=n;j++)
-            {
-                System.out.print(x[i][j]+" ");
-               // temp.add(x[i][j]);
-            }
-            System.out.println();
-        }
+ 
 
             while(count<=n*n)
             {
@@ -346,17 +316,6 @@ class Solution {
                 count++;
             }*/
 
- for(int i=1;i<=n;i++)
-        {
-          //  temp = new ArrayList<Integer>();
-            for(int j=1;j<=n;j++)
-            {
-                System.out.print(x[i][j]+" ");
-                //temp.add(x[i][j]);
-            }
-            System.out.println();
-        //    ret.add(temp);
-        }
 
             while(count<=n*n)
             {
@@ -384,12 +343,12 @@ class Solution {
             temp = new ArrayList<Integer>();
             for(int j=1;j<=n;j++)
             {
-                System.out.print(x[i][j]+" ");
+               //System.out.print(x[i][j]+" ");
                 temp.add(x[i][j]);
             }
-            System.out.println();
+            //System.out.println();
             ret.add(temp);
         }
-        //System.out.println(ret);
+        System.out.println(ret);
     }
 }
