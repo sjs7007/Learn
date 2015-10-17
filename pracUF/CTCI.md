@@ -69,26 +69,30 @@ Then spacing to %20 : O(n)
 import java.util.*;
 
 char ip[] = "Mr John Smith    ".toCharArray();
-char nChar=13;
-int nSpace = ip.length-nChar,lastEnd=-1,lastStart=-1;
-for(int i=ip.length-1;i>=0;i--) {
-	if(ip[i]!=' ') {
-		lastEnd=i;
-		for(int j=i-1;j>=0;j--) {
-			if(ip[j]==' ') {
-				lastStart=i-1;
-				break;
-			}
-		}
-	}
-	break;	
+int len=13,nSpace=0;
+for(int i=0;i<len;i++)
+{
+	if(ip[i]==' ')
+	{
+		nSpace++;
+	}	
 }
-//find nSpaces before last word
-int nBefore=0;
-for(int i=lastStart-1;i>=0;i--) {
-	if(ip[i]==' ') {
-		nBefore++;
+int copyIndex=ip.length-1;
+for(int i=len;i>=0;i--) //#1 : should start from len-1
+{
+	if(ip[i]==' ')
+	{
+		ip[copyIndex]='0';
+		ip[copyIndex-1]='2' //#2 : forgot semicolon
+		ip[copyIndex-2]='%';
+		copyIndex=copyIndex-3;
+	}
+	else 
+	{
+		ip[copyIndex]=ip[i];
+		copyIndex--;
 	}
 }
-int nAfter=(nSpace-nBefore*3)/3; //no of %20 after last word 
+System.out.println(Arrays.toString(ip));
+
 ```
