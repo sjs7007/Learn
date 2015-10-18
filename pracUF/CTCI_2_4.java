@@ -136,11 +136,21 @@ class LinkedList
 	void partition(int x)
 	{
 		System.out.println("partition : "+x);
-		Node current=head;
+		Node current=head,nHead=null;
 		while(current!=null)
 		{
 			if(current.data>=x)
 			{
+				if(nHead==null)
+				{
+					nHead=current;
+				}
+				else
+				{
+					temp.next=new Node(current.data);
+					temp=temp.next;
+				}
+
 				if(current.next==null)
 				{
 					current.data=-1;
