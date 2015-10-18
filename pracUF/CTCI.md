@@ -96,3 +96,49 @@ for(int i=len;i>=0;i--) //#1 : should start from len-1
 System.out.println(Arrays.toString(ip));
 
 ```
+
+##1.5
+
+Method 1 : Generate compressed string. If < original, return compressed else original. 
+Complexity : O(n)
+
+^ WRONGGGGGGGGGGG Complexity
+Complexity will be O(n+k^2) if normal string is used instead of stringbuffer since appending takes O(n^2) time in normal string.
+k=number of character sequences. Hene use StringBuffer instead. 
+
+Actually StringBuilder seems even better thhan using StringBuffer for non-syncronized code : http://stackoverflow.com/questions/2439243/what-is-the-difference-between-string-and-stringbuffer-in-java
+
+Method 2 : Run through string and check beforehand if compressed string will be smaller than actual. If no, return original string.
+Else :
+Generate compressed String using StringBuilder and return.
+
+##1.6 Rotate 2-D arrray
+
+http://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array
+
+<COME-BACK-LATER>
+
+##1.7 Set 0 entire row/column
+
+Method 1 : Naive approach using additional matrix.
+Time and space complexity both O(m*n).
+
+Method 2 : Boolean flag matrix
+O(m*n) time
+O(m+n) space : two boolean array row[] col[] corresponding to row and column dimensions
+
+Run through the matrix first and if 0 found in x[r][c], set
+row[r] and col[c] to true.
+Assume you have a method isSubstring which checks if one word is a substring of
+another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using
+only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
+
+Then use the the two boolean array to set rows and columns to zeros.
+
+Method 3 : O(1) space.
+Use 1st row and column like the boolean arrays for all rows and columns except 1st. For the 1st we check in advance and use two separate variables.
+
+##1.8 
+Question : Assume you have a method isSubstring which checks if one word is a substring of
+another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using
+only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
