@@ -132,9 +132,37 @@ class LinkedList
 		}
 		System.out.print(x.data+" ");
 	}
+
+	void partition(int x)
+	{
+		System.out.println("Partition called with : "+x);
+		Node current=head,nHead=null;
+		while(current!=null)
+		{
+			if(current.data>=x)
+			{
+				nHead=current;
+				if(current.next==null)
+				{
+					current.data=-11;
+				}
+				else 
+				{
+					current.data=current.next.data;
+					current.next=current.next.next;
+				}		
+			}
+			else 
+			{
+				current=current.next;
+			}
+		}
+		display();
+	}
+
 }
 
-class CTCI_2_reverseLinkedList
+class CTCI_2_4
 {
 	public static void main(String args[])
 	{
@@ -157,11 +185,12 @@ class CTCI_2_reverseLinkedList
 		L.display();
 		for(int i=0;i<10;i++)
 		{
-			L.add(i);
+			L.add(r.nextInt(10));
 		}
 		L.display();
 		L.deleteNode(L.findNode(2));
-		L.printReverse(L.head);
-		System.out.println();
+		//L.printReverse(L.head);
+		//System.out.println();
+		L.partition(3);
 	}
 }

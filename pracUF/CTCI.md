@@ -185,3 +185,35 @@ c.next=c.next.next
 //c=c.next : won't return the change hence won't work
 
 Complexity : O(1)
+
+#2.4
+Question : Partiton linked list around given value.
+
+void partition(int x)
+{
+	System.out.println("Partition called with : "+x);
+	Node current=head,nHead=null;
+	while(current!=null)
+	{
+		if(current.data>=x)
+		{
+			nHead=current;
+			current=current.next;
+		}
+	}
+	display();
+}
+
+
+Other Questions 
+----
+1. Print Reverse of linked list
+
+void printReverse(Node x)
+{
+	if(x.next!=null)
+	{
+		printReverse(x.next);
+	}
+	System.out.print(x+" ");
+}
