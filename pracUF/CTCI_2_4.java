@@ -136,7 +136,7 @@ class LinkedList
 	void partition(int x)
 	{
 		System.out.println("partition : "+x);
-		Node current=head,nHead=null,temp=null;
+		Node current=head,nHead=null,temp=null,prev=null;
 		while(current!=null)
 		{
 			if(current.data>=x)
@@ -154,7 +154,12 @@ class LinkedList
 
 				if(current.next==null)
 				{
-					current.data=-1;
+					//current.data=-1;
+					//current.next=nHead;
+					//current.next=nHead;
+					//current.next.data=nHead.data;
+					current.data=nHead.data;
+					current.next=nHead.next;
 					break;
 				}
 				else
@@ -162,17 +167,31 @@ class LinkedList
 					current.data=current.next.data;
 					current.next=current.next.next;
 				}
+				prev=current;
 			}
 			else 
 			{
+				
+				if(current.next==null)
+				{
+					//current.data=-1;
+					//current.next=nHead;
+					//current.next=nHead;
+					//current.next.data=nHead.data;
+				//	current.data=nHead.data;
+					current.next=nHead;
+					break;
+				}
+
+				prev=current;
 				current=current.next;
 			}
 		}
 		display();
-		for(current=nHead;current.next!=null;current=current.next)
+		/*for(current=nHead;current!=null;current=current.next)
 		{
 			System.out.print(current.data+" ");
-		}
+		}*/
 	}
 
 }
@@ -195,12 +214,14 @@ class CTCI_2_4
 		{
 			L.add(r.nextInt(3));
 		}
-		L.display();
+		/*L.display();
 		L.removeDuplicates();
-		L.display();
+		L.display();*/
 		for(int i=0;i<10;i++)
 		{
 			L.add(r.nextInt(10));
+			//L.add(i);
+			//L.add(10-i);
 		}
 		L.display();
 		//L.deleteNode(L.findNode(2));
