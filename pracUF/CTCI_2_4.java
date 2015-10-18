@@ -141,7 +141,18 @@ class LinkedList
 		{
 			if(current.data>=x)
 			{
-				nHead=current;
+				nHead=current;	
+			}	
+		}
+		Node temp=nHead;
+		for(Node current=temp;current!=null;current=current.next)
+		{
+			if(current.data>=x)
+			{
+				//add to > linked list
+				temp.next=new Node(current.data);
+				temp=temp.next;
+				//delete node
 				if(current.next==null)
 				{
 					current.data=-11;
@@ -150,14 +161,9 @@ class LinkedList
 				{
 					current.data=current.next.data;
 					current.next=current.next.next;
-				}		
-			}
-			else 
-			{
-				current=current.next;
+				}	
 			}
 		}
-		display();
 	}
 
 }
