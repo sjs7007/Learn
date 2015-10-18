@@ -10,7 +10,7 @@ public class lastWord {
 	           //loop until space
 	           for(int j=i;j<a.length();j++)
 	           {
-	               System.out.println("here1");
+	              // System.out.println("here1");
 	               if(a.charAt(j)==' ') {
 	                   j++;
 	               } 
@@ -24,7 +24,7 @@ public class lastWord {
 	           }
 	           //loop till next space 
 	           for(int j=i;j<a.length();j++) {
-	           		               System.out.println("here2");
+	           		            //   System.out.println("here2");
 
 	               if(a.charAt(j)!=' ') {
 	                   count++;
