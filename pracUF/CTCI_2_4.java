@@ -133,6 +133,32 @@ class LinkedList
 		System.out.print(x.data+" ");
 	}
 
+	void partition(int x)
+	{
+		System.out.println("partition : "+x);
+		Node current=head;
+		while(current!=null)
+		{
+			if(current.data>=x)
+			{
+				if(current.next==null)
+				{
+					current.data=-1;
+					break;
+				}
+				else
+				{
+					current.data=current.next.data;
+					current.next=current.next.next;
+				}
+			}
+			else 
+			{
+				current=current.next;
+			}
+		}
+		display();
+	}
 
 }
 
