@@ -153,3 +153,35 @@ if given string is substring  of string+string, then rotation, else not.
 Check book for better explanation. 
 
 # Chapter 2 : Linked List
+
+#2.1 : In notebook
+
+#2.2
+Question : kth to last element of singly linked list
+
+Method 1 : Traverse till end of list to get n=count of elements in list. Then for kth to last just start traversing from begining with count=1, stop when count=n-k and return. 
+
+Take care than k<=n.
+
+Complexity : O(n)
+
+-----
+Textbook methods : 
+
+#1 : Recursion with printing  
+Traverse till end of list. Set counter to 0 when at end of list. start incrementing on return. When return value=k, print the element.
+
+#2 : Recursion with node return
+Use wrapper class to create new DS with both node and counter value.
+
+#3 : Use two runners k distance apart. One will start at head, other at head+k. Increment both by 1 each time. When x+k=n, for pointer two, pointer 1 will be k distance away from n and hence that is the node to be returned.
+
+#2.3 
+Question : Delete node in middle of linked list given access to only that node. 
+
+Method 1 :
+c.data=c.next.data
+c.next=c.next.next
+//c=c.next : won't return the change hence won't work
+
+Complexity : O(1)
