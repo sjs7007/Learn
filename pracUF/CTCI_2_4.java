@@ -133,38 +133,6 @@ class LinkedList
 		System.out.print(x.data+" ");
 	}
 
-	void partition(int x)
-	{
-		System.out.println("Partition called with : "+x);
-		Node current=head,nHead=null;
-		while(current!=null)
-		{
-			if(current.data>=x)
-			{
-				nHead=current;	
-			}	
-		}
-		Node temp=nHead;
-		for(Node current=temp;current!=null;current=current.next)
-		{
-			if(current.data>=x)
-			{
-				//add to > linked list
-				temp.next=new Node(current.data);
-				temp=temp.next;
-				//delete node
-				if(current.next==null)
-				{
-					current.data=-11;
-				}
-				else 
-				{
-					current.data=current.next.data;
-					current.next=current.next.next;
-				}	
-			}
-		}
-	}
 
 }
 
@@ -194,7 +162,7 @@ class CTCI_2_4
 			L.add(r.nextInt(10));
 		}
 		L.display();
-		L.deleteNode(L.findNode(2));
+		//L.deleteNode(L.findNode(2));
 		//L.printReverse(L.head);
 		//System.out.println();
 		L.partition(3);
