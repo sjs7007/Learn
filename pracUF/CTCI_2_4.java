@@ -136,14 +136,15 @@ class LinkedList
 	void partition(int x)
 	{
 		System.out.println("partition : "+x);
-		Node current=head,nHead=null;
+		Node current=head,nHead=null,temp=null;
 		while(current!=null)
 		{
 			if(current.data>=x)
 			{
 				if(nHead==null)
 				{
-					nHead=current;
+					nHead=new Node(current.data);
+					temp=nHead;
 				}
 				else
 				{
@@ -168,6 +169,10 @@ class LinkedList
 			}
 		}
 		display();
+		for(current=nHead;current.next!=null;current=current.next)
+		{
+			System.out.print(current.data+" ");
+		}
 	}
 
 }
