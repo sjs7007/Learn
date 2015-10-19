@@ -136,14 +136,17 @@ class LinkedList
 
 	void actualReverse()
 	{
-		if(head==null || head.next==null)
+		Node temp=null,prev=null,current=head;
+		while(current!=null)
 		{
-			return;
+			temp=current.next;
+			current.next=prev;
+			prev=current;
+			current=temp;
 		}
-		for(Node current=head.next;current.next!=null;current=current.next)
-		{
-			
-		}
+		head=prev;
+		System.out.println("Linkedlist reversed :");
+		display();
 	}
 }
 
@@ -153,28 +156,11 @@ class CTCI_2_reverseLinkedList
 	{
 		//HashSet x = new HashSet();
 		LinkedList L = new LinkedList();
-		/*L.add(1);
-		L.add(2);
-		L.add(3);
-		L.display();
-		L.delete(2);
-		L.display();
-		L.add*/
-		Random r = new Random();
-		for(int i=0;i<10;i++)
-		{
-			L.add(r.nextInt(3));
-		}
-		L.display();
-		L.removeDuplicates();
-		L.display();
 		for(int i=0;i<10;i++)
 		{
 			L.add(i);
 		}
 		L.display();
-		L.deleteNode(L.findNode(2));
-		L.printReverse(L.head);
-		System.out.println();
+		L.actualReverse();
 	}
 }
