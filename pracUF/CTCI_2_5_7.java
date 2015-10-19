@@ -102,21 +102,21 @@ class LinkedList
 		if(x.next!=null) 
 		{
 			temp = checkPalindrome(x.next);
+			if(temp.shouldBreak)
+			{
+				return temp;
+			}
 		}
 		if(temp==null)
 		{
 			temp=head;
 		}
-		if(x.data==temp.data)
+		boolean shouldBreak=false;
+		if(x.data!=temp.data)
 		{
-			temp = temp.next;
+			shouldBreak=true;
 		}
-		else
-		{
-			System.out.println("Not a palindrome.");
-			temp=temp.next;
-		}
-		return temp;
+		return (new superNode(temp,shouldBreak));
 	}
 }
 
@@ -129,7 +129,7 @@ class CTCI_2_5_7{
 		L.add(3);
 		L.add(2);
 		L.add(1);
-		L.checkPalindrome(L.head);
+		System.out.println(L.checkPalindrome(L.head).shouldBreak);
 
 	}
 }
