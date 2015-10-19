@@ -119,18 +119,20 @@ class LinkedList
 
 		int sum=0;
 
-		addDigits(n1.head,n2.head);
 
+		addDigits(n1.head,n2.head,ret);
+		ret.display();
 		return ret;
 	}
 
-	static void addDigits(Node x,Node y)
+	static void addDigits(Node x,Node y,LinkedList L)
 	{
 		if(x.next!=null)
 		{
-			addDigits(x.next,y.next);
+			addDigits(x.next,y.next,L);
 		}
-		System.out.print((x.data+y.data)+" ");
+		//System.out.print((x.data+y.data)+" ");
+		L.prepend(x.data+y.data);
 	}
 
 }
