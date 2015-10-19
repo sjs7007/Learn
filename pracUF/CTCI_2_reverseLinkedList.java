@@ -133,6 +133,18 @@ class LinkedList
 		}
 		System.out.print(x.data+" ");
 	}
+
+	void actualReverse()
+	{
+		if(head==null || head.next==null)
+		{
+			return;
+		}
+		for(Node current=head.next;current.next!=null;current=current.next)
+		{
+			
+		}
+	}
 }
 
 class CTCI_2_reverseLinkedList
