@@ -5,19 +5,18 @@ class QuickSort
 	public static void main(String args[])
 	{
 		int a[]={10,2,33,23,212,3,9,10,2};
-		a = quickSort(a,0,a.length-1);
+		quickSort(a,0,a.length-1);
 		System.out.println(Arrays.toString(a));
 	}
 
-	public static int[] quickSort(int a[],int p,int r)
+	public static void quickSort(int a[],int p,int r)
 	{
 		if(p<r)
 		{
 			int  q = partition(a,p,r);
-			a = quickSort(a,p,q-1);
-			a = quickSort(a,q+1,r);
+			quickSort(a,p,q-1);
+			quickSort(a,q+1,r);
 		}
-		return a;
 	}
 
 	public static int partition(int a[],int p,int r)
