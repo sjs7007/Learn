@@ -96,9 +96,9 @@ class LinkedList
 		System.out.print(x.data);
 	}
 
-	Node checkPalindrome(Node x)
+	superNode checkPalindrome(Node x)
 	{
-		Node temp = null;
+		superNode temp = null;
 		if(x.next!=null) 
 		{
 			temp = checkPalindrome(x.next);
@@ -109,15 +109,18 @@ class LinkedList
 		}
 		if(temp==null)
 		{
-			temp=head;
+			temp=new superNode(head,false);
 		}
 		boolean shouldBreak=false;
-		if(x.data!=temp.data)
+		if(x.data!=temp.sNode.data)
 		{
 			shouldBreak=true;
 		}
-		return (new superNode(temp,shouldBreak));
+		temp.sNode=temp.sNode.next;
+		return (new superNode(temp.sNode,shouldBreak));
 	}
+
+
 }
 
 class CTCI_2_5_7{
@@ -129,7 +132,8 @@ class CTCI_2_5_7{
 		L.add(3);
 		L.add(2);
 		L.add(1);
-		System.out.println(L.checkPalindrome(L.head).shouldBreak);
+		L.display();
+		System.out.println("Is not a palindrome :  "+L.checkPalindrome(L.head).shouldBreak);
 
 	}
 }
