@@ -120,19 +120,26 @@ class LinkedList
 		int sum=0;
 
 
-		addDigits(n1.head,n2.head,ret);
+		sum = addDigits(n1.head,n2.head,ret);
+		if(sum!=0)
+		{
+			ret.prepend(sum);
+		}
 		ret.display();
 		return ret;
 	}
 
-	static void addDigits(Node x,Node y,LinkedList L)
+	static int addDigits(Node x,Node y,LinkedList L)
 	{
+		int carry=0;
 		if(x.next!=null)
 		{
-			addDigits(x.next,y.next,L);
+			carry = addDigits(x.next,y.next,L);
 		}
 		//System.out.print((x.data+y.data)+" ");
-		L.prepend(x.data+y.data);
+		int sum = carry + x.data+y.data;
+		L.prepend(sum%10);
+		return (sum/10);
 	}
 
 }
@@ -143,8 +150,8 @@ class CTCI_2_5_2
 	{
 		LinkedList n1 = new LinkedList();
 		n1.add(7);
-		//n1.add(1);
-		//n1.add(6);
+		n1.add(1);
+		n1.add(6);
 		LinkedList n2 = new LinkedList();
 		n2.add(5);
 	//	n2.add(9);
