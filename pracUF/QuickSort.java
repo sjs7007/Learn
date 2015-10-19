@@ -9,20 +9,20 @@ class QuickSort
 		System.out.println(Arrays.toString(a));
 	}
 
-	public static void quickSort(int a[],int p,int r)
+	public static void quickSort(int a[],int low,int high)
 	{
-		if(p<r)
+		if(low<high)
 		{
-			int  q = partition(a,p,r);
-			quickSort(a,p,q-1);
-			quickSort(a,q+1,r);
+			int q = partition(a,low,high);
+			quickSort(a,low,q-1);
+			quickSort(a,q+1,high);
 		}
 	}
 
 	public static int partition(int a[],int p,int r)
 	{
-		int x = a[r];
-		int i = p-1;
+		int x=a[r]; //pivot
+		int i=p-1;
 		for(int j=p;j<=r-1;j++)
 		{
 			if(a[j]<=x)
