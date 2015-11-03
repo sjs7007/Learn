@@ -14,7 +14,7 @@ public class Solution {
 	    	rank++;
 	    	char temp = PQ.poll();
 	    	charRank.put(temp,rank);
-	    	System.out.println(temp+" "+charRank.get(temp));
+	    	//System.out.println(temp+" "+charRank.get(temp));
 	    }
 	    rank=0;
 	    int n = a.length();
@@ -28,7 +28,7 @@ public class Solution {
 	    			smallerPresent++;
 	    		}
 	    	}
-	    	System.out.println((ipRank-1-smallerPresent)+" "+factorial(n-i-1));
+	    //	System.out.println((ipRank-1-smallerPresent)+" "+factorial(n-i-1));
 	    	int temp1 = ipRank-1-smallerPresent;
 	    	if(temp1>0) {
 	    		rank = rank + temp1*factorial(n-i-1);
