@@ -16,19 +16,39 @@ public class Solution {
 	    	charRank.put(temp,rank);
 	    	System.out.println(temp+" "+charRank.get(temp));
 	    }
-	    return -1;
+	    rank=0;
+	    int n = a.length();
+	    for(int i=0;i<a.length();i++) {
+	    //	 charRank.get(a.charAt(i));
+	    	int ipRank = (int)charRank.get(a.charAt(i));
+	    	///System.out.println(ipRank);
+	    	int smallerPresent=0;
+	    	for(int j=0;j<i;j++) {
+	    		if((int)charRank.get(a.charAt(j)) < ipRank) {
+	    			smallerPresent++;
+	    		}
+	    	}
+	    	System.out.println((ipRank-1-smallerPresent)+" "+factorial(n-i-1));
+	    	int temp1 = ipRank-1-smallerPresent;
+	    	if(temp1>0) {
+	    		rank = rank + temp1*factorial(n-i-1);
+	    	}
+	    }
+	    rank=rank+1;
+	    return rank;
 	}
 	
-	public int factorial(int x) {
+	public static int factorial(int x) {
 	    int fac=1;
 	    while(x>1) {
 	        fac=fac*x;
 	        x--;
+	  
 	    }
 	    return fac;
 	}
 
 	public static void main(String args[]) {
-		findRank("apqrxyzbcd");
+		System.out.println(findRank("oqnxiamw"));
 	}
 }
