@@ -33,6 +33,9 @@ public class Solution {
 	    	if(temp1>0) {
 	    		rank = rank + temp1*factorial(n-i-1);
 	    	}
+	    	if(rank>1000003) {
+	    		rank = rank % 1000003;
+	    	}
 	    }
 	    rank=rank+1;
 	    return rank;
@@ -43,7 +46,9 @@ public class Solution {
 	    while(x>1) {
 	        fac=fac*x;
 	        x--;
-	  
+	  		if(fac>1000003) {
+	  			fac = fac % 1000003;
+	  		}
 	    }
 	    return fac;
 	}
