@@ -47,12 +47,20 @@ public class Rank2 {
 	    //	 charRank.get(a.charAt(i));
 	    	int ipRank = (int)charRank.get(a.charAt(i));
 	    	///System.out.println(ipRank);
-	    	int smallerPresent=0;
-	    	for(int j=0;j<i;j++) {
+	    	int smallerUniquePresent=0;
+	    	/*for(int j=0;j<i;j++) {
 	    		if((int)charRank.get(a.charAt(j)) < ipRank) {
 	    			smallerPresent++;
 	    		}
-	    	}
+	    	}*/
+            Iterator i = set.iterator();
+            while(i.hasNext()) {
+                Map.Entry me = (Map.Entry)i.next();
+                if((int)me.getKey().get(0)<ipRank) {
+                    smallerUniquePresent++;
+                }
+            }
+
 	    //	System.out.println((ipRank-1-smallerPresent)+" "+factorial(n-i-1));
 	    	int temp1 = ipRank-1-smallerPresent;
 	    	if(temp1>0) {
@@ -79,7 +87,7 @@ public class Rank2 {
 	}
 
 	public static void main(String args[]) {
-		findRank("aaacbsahbds");
+		findRank("aabcad");
         //System.out.println(findRank("aaa"));
 	}
 }
